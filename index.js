@@ -1,12 +1,14 @@
+import config from "./config/config.js";
 import express from "express";
-
+import connection from "./db/connection.js";
 
 
 const app = express();
-const port = 3000;
+app.use(express.json());
+const connect = connection();
 
 
 
-app.listen(port, () => {
-    console.log(`El servidor está corriendo en el puerto ${port}`);   
+app.listen(config.port, () => {
+    console.log(`El servidor está corriendo en el puerto http://localhost:${config.port}`);   
 })
