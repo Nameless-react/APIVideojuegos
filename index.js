@@ -2,6 +2,7 @@ import config from "./config/config.js";
 import express from "express";
 import connection from "./db/connection.js";
 import userRouter from "./routes/users.js"
+import developerRouter from "./routes/developers.js"
 
 
 const app = express();
@@ -10,7 +11,8 @@ app.use(express.json());
 const connect = connection();
 
 
-app.use("users", userRouter);
+app.use("/users", userRouter);
+app.use("/developers", developerRouter);
 
 app.get("/", (req, res) => {
     res.status(200).json({message: "Está vivo"})
