@@ -1,5 +1,6 @@
 import config from "./config/config.js";
 import express from "express";
+import cors from "cors";
 import connection from "./db/connection.js";
 import userRouter from "./routes/users.js"
 import developerRouter from "./routes/developers.js"
@@ -8,6 +9,8 @@ import developerRouter from "./routes/developers.js"
 const app = express();
 app.disable("x-powered-by");
 app.use(express.json());
+//* Can add the allowed domains to avoid the "*" in the headers of CORS
+app.use(cors());
 const connect = connection();
 
 
