@@ -8,11 +8,11 @@ router.get("/", getDevelopers);
 
 router.get("/:id", getDeveloper);
 
-router.post("/register", registerDeveloper);
+router.post("/", registerDeveloper);
 
-router.delete("/delete/:id", deleteDeveloper)
+router.delete("/:id", deleteDeveloper)
 
-router.put("/update/:id", updateDeveloper)
+router.patch("/:id", updateDeveloper)
 
 
 export default router;
