@@ -21,7 +21,7 @@ const developerSchema = new Schema({
 
 const developerValidations = z.object({
     name: z.string({
-        invalid_type_error: "Developer's name must be a string",
+        invalid_type_error: "The name must be a string",
         required_error: "The field name is required"
     }),
     foundation: z.string().refine(value => {
@@ -29,9 +29,8 @@ const developerValidations = z.object({
         if (isNaN(date)) return false;
         return date < new Date();
     },{
-        invalid_type_error: "Foundation must be a date",
+        invalid_type_error: "The Foundation must be a date",
         required_error: "The field foundation is required"
-        
     }),
     number_employees: z.number({
         invalid_type_error: "The number of employees must be a number",

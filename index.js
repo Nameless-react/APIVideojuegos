@@ -2,9 +2,12 @@ import config from "./config/config.js";
 import express from "express";
 import cors from "cors";
 import connection from "./db/connection.js";
-import userRouter from "./routes/users.js"
-import developerRouter from "./routes/developers.js"
 
+
+// Routers
+import userRouter from "./routes/users.js";
+import developerRouter from "./routes/developers.js";
+import videogameRouter from "./routes/videogame.js";
 
 const app = express();
 app.disable("x-powered-by");
@@ -14,6 +17,7 @@ app.use(cors());
 const connect = connection();
 
 
+app.use("/videogames", videogameRouter);
 app.use("/users", userRouter);
 app.use("/developers", developerRouter);
 
