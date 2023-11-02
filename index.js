@@ -7,7 +7,8 @@ import errorHandler from "./middlewares/errorHandler.js";
 // Routers
 import userRouter from "./routes/users.js";
 import developerRouter from "./routes/developers.js";
-import videogameRouter from "./routes/videogame.js";
+import videogameRouter from "./routes/videogames.js";
+import teamRouter from "./routes/teams.js";
 
 const app = express();
 app.disable("x-powered-by");
@@ -20,6 +21,9 @@ const connect = connection();
 app.use("/videogames", videogameRouter);
 app.use("/users", userRouter);
 app.use("/developers", developerRouter);
+app.use("/teams", teamRouter);
+
+
 
 app.get("/", (req, res) => {
     res.status(200).json({message: "Está vivo"})
