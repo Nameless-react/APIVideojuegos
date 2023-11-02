@@ -1,8 +1,8 @@
 import config from "./config/config.js";
-import express from "express";
 import cors from "cors";
+import express from "express";
 import connection from "./db/connection.js";
-
+import errorHandler from "./middlewares/errorHandler.js";
 
 // Routers
 import userRouter from "./routes/users.js";
@@ -24,6 +24,8 @@ app.use("/developers", developerRouter);
 app.get("/", (req, res) => {
     res.status(200).json({message: "Está vivo"})
 })
+
+app.use(errorHandler);
 
 
 app.listen(config.port, () => {
