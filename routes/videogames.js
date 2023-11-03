@@ -1,18 +1,20 @@
 import { Router } from "express";
 import { getVideogame, getVideogames, deleteVideogame, updateVideogame, registerVideogame } from "../controllers/videogames.js"
 
-const router = Router();
+
+function videogameRouters(videogame) {
+    const router = Router();
+    router.get("/", getVideogames(videogame));
+    
+    router.get("/:id", getVideogame(videogame));
+    
+    router.post("/", registerVideogame(videogame));
+    
+    router.delete("/:id", deleteVideogame(videogame))
+    
+    router.patch("/:id", updateVideogame(videogame))
+    return router;
+}
 
 
-router.get("/", getVideogames);
-
-router.get("/:id", getVideogame);
-
-router.post("/", registerVideogame);
-
-router.delete("/:id", deleteVideogame)
-
-router.patch("/:id", updateVideogame)
-
-
-export default router;
+export default videogameRouters;
