@@ -38,7 +38,7 @@ export const getTeam = errorWrapper(async (req, res) => {
     const respond = id.length < 24 ? await team.findOne({name: {$regex: regexName}}) : await team.findById(id, {versionKey: 0}); 
     if (!respond) throw new CustomError(JSON.stringify({message: "The document was not found"}), 404, "not found");
 
-    res.json({
+    res.status(200).json({
         status: "success",
         data: respond
     })
@@ -51,7 +51,7 @@ export const registerTeam = errorWrapper(async (req, res) => {
     
     
     const alreadyExist = await team.findOne({name: capitalize(result.data.name)});
-    if (alreadyExist) throw new CustomError(JSON.stringify({message: `Resource already exist in the data base, follow the next link to find the data: http://localhost:${config.port}/teams/${alreadyExist._id}`}), 409, "redirect");
+    if (alreadyExist) throw new CustomError(JSON.stringify({message: `Resource already exist in the database, follow the next link to find the data: http://localhost:${config.port}/teams/${alreadyExist._id}`}), 409, "redirect");
       
 
     const newDocument = await team.create({...result.data})
@@ -80,7 +80,6 @@ export const updateTeam = errorWrapper(async (req, res, next) => {
     const result = validatePartialTeam(req.body);
 
     if (result.error) throw new CustomError(result.error.message, 400);
-    if (!isValidObjectId(id)) throw new CustomError(JSON.stringify({message: "The id must be a string of 12 bytes or a string of 24 hex characters or an integer"}), 500, "failed")
     
     const alreadyExist = await team.findById(id); 
     if (!alreadyExist) throw new CustomError(JSON.stringify({message: "Not Found"}), 404, "not found")

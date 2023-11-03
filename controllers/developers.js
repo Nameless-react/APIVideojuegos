@@ -1,7 +1,6 @@
 import developer from "../db/developer.js"
 import { validateDeveloper, validatePartialDeveloper } from "../schemas/developer.js"
 import { filters } from "../utils/filterDevelopers.js"
-import { isValidObjectId } from "mongoose";
 import { capitalize } from "../utils/utils.js";
 import config from "../config/config.js"
 import errorWrapper from "../utils/errorWrapper.js";
@@ -42,7 +41,7 @@ export const getDeveloper = errorWrapper(async (req, res) => {
     const respond = id.length < 24 ? await developer.findOne({name: {$regex: regexName}}) : await developer.findById(id, {versionKey: 0}); 
     if (!respond) throw new CustomError(JSON.stringify({message: "The document was not found"}), 404, "not found");
 
-    res.json({
+    res.status(200).json({
         status: "success",
         data: respond
     })
@@ -55,7 +54,7 @@ export const registerDeveloper = errorWrapper(async (req, res) => {
     
     
     const alreadyExist = await developer.findOne({name: capitalize(result.data.name)});
-    if (alreadyExist) throw new CustomError(JSON.stringify({message: `Resource already exist in the data base, follow the next link to find the data: http://localhost:${config.port}/developers/${alreadyExist._id}`}), 409, "redirect");
+    if (alreadyExist) throw new CustomError(JSON.stringify({message: `Resource already exist in the database, follow the next link to find the data: http://localhost:${config.port}/developers/${alreadyExist._id}`}), 409, "redirect");
       
 
     const newDocument = await developer.create({...result.data})
@@ -84,7 +83,6 @@ export const updateDeveloper = errorWrapper(async (req, res, next) => {
     const result = validatePartialDeveloper(req.body);
 
     if (result.error) throw new CustomError(result.error.message, 400);
-    if (!isValidObjectId(id)) throw new CustomError(JSON.stringify({message: "The id must be a string of 12 bytes or a string of 24 hex characters or an integer"}), 500, "failed")
     
     const alreadyExist = await developer.findById(id); 
     if (!alreadyExist) throw new CustomError(JSON.stringify({message: "Not Found"}), 404, "not found")

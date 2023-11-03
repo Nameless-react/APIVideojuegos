@@ -1,6 +1,5 @@
 import videogame from "../db/videogame.js"
 import { validatePartialVideogame, validateVideogame } from "../schemas/videogame.js";
-import { isValidObjectId } from "mongoose";
 import { capitalize } from "../utils/utils.js";
 import errorWrapper from "../utils/errorWrapper.js";
 import { CustomError } from "../utils/customError.js";
@@ -32,7 +31,7 @@ export const registerVideogame = errorWrapper(async (req, res) => {
     if (result.error) throw new CustomError(result.error.message, 400);
 
     const alreadyExist = await videogame.findOne({title: result.data.title});
-    if (alreadyExist) throw new CustomError(JSON.stringify({message: `Resource already exist in the data base, follow the next link to find the data: http://localhost:${config.port}/videogames/${alreadyExist._id}`}), 409, "redirect");
+    if (alreadyExist) throw new CustomError(JSON.stringify({message: `Resource already exist in the database, follow the next link to find the data: http://localhost:${config.port}/videogames/${alreadyExist._id}`}), 409, "redirect");
     
     const newDocument = await videogame.create({...result.data});
     res.status(201).json({
@@ -59,7 +58,6 @@ export const updateVideogame = errorWrapper(async (req, res) => {
     const result = validatePartialVideogame(req.body);
 
     if (result.error) throw new CustomError(result.error.message, 400);
-    if (!isValidObjectId(id)) throw new CustomError(JSON.stringify({message: "The id must be a string of 12 bytes or a string of 24 hex characters or an integer"}), 500, "failed")
     
     const alreadyExist = await videogame.findById(id); 
     if (!alreadyExist) throw new CustomError(JSON.stringify({message: "The document was not found"}), 404, "not found")

@@ -3,6 +3,7 @@ import cors from "cors";
 import express from "express";
 import connection from "./db/connection.js";
 import errorHandler from "./middlewares/errorHandler.js";
+import { CustomError } from "./utils/customError.js";
 
 // Routers
 import userRouter from "./routes/users.js";
@@ -27,6 +28,10 @@ app.use("/teams", teamRouter);
 
 app.get("/", (req, res) => {
     res.status(200).json({message: "Está vivo"})
+})
+
+app.all("*", (req, res, next) => {
+    next(new CustomError(JSON.stringify({message: `Can't find ${req.originalUrl} on the server`}), 404, "not found"));
 })
 
 app.use(errorHandler);
