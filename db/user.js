@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 
 const userSchema = new Schema({
     name: {
-        type: Stirng,
+        type: String,
         required: true
     },
     email: {
@@ -20,7 +20,7 @@ const userSchema = new Schema({
         unique: true
     },
     roles: [{type: String, ref: "role"}],
-    usage: {
+    usage: [{
         date: {
             type: Date,
             default: Date.now()
@@ -29,7 +29,7 @@ const userSchema = new Schema({
             type: Number,
             default: 0
         }
-    }
+    }]
     
 })
 

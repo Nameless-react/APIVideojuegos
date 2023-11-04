@@ -1,0 +1,15 @@
+11/3/2023, 4:32:54 PM | error | Error: {"message":"The document was not found"}
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/controllers/videogames.js:20:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+11/3/2023, 5:52:26 PM | error | ReferenceError: finalFields is not defined
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/controllers/dlcs.js:12:12
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/utils/errorWrapper.js:3:9
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:175:3)
+

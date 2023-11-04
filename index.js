@@ -11,12 +11,31 @@ import userRouter from "./routes/users.js";
 import developerRouter from "./routes/developers.js";
 import videogameRouter from "./routes/videogames.js";
 import teamRouter from "./routes/teams.js";
+import dlcRouter from "./routes/dlcs.js";
+import roleRouter from "./routes/roles.js";
 
 
 //Models
 import developerModel from "./db/developer.js"
 import teamModel from "./db/team.js"
 import videogameModel from "./db/videogame.js"
+import dlcModel from "./db/dlc.js"
+import roleModel from "./db/role.js"
+import commentModel from "./db/comment.js"
+import userModel from "./db/user.js"
+
+
+import logger from "./utils/logger.js";
+
+process.on('SIGTERM', signal => {
+    logger.close();
+    process.exit(0)
+})
+
+process.on('SIGINT', signal => {
+    logger.close();
+    process.exit(0)
+  })
 
 
 const app = express();
@@ -28,9 +47,11 @@ const connect = connection();
 
 
 app.use("/videogames", videogameRouter(videogameModel));
-app.use("/users", userRouter);
+app.use("/users", userRouter(userModel));
 app.use("/developers", developerRouter(developerModel));
 app.use("/teams", teamRouter(teamModel));
+app.use("/dlcs", dlcRouter(dlcModel));
+app.use("/roles", roleRouter(roleModel));
 
 
 app.all("*", (req, res, next) => {

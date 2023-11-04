@@ -3,5 +3,6 @@ export class CustomError extends Error {
         super(message);
         this.statusCode = statusCode;
         this.status = status;
+        this.isOperational = true;
     }
 }

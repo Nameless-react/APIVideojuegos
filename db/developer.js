@@ -4,7 +4,8 @@ import { Schema, model } from "mongoose";
 const developerSchema = new Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     foundation: {
         type: Date,

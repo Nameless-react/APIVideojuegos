@@ -3,7 +3,8 @@ import { Schema, model } from "mongoose";
 const videogameSchema = new Schema({
     title: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     description: {
         type: String,

@@ -2,17 +2,17 @@ import { Router } from "express";
 import { getVideogame, getVideogames, deleteVideogame, updateVideogame, registerVideogame } from "../controllers/videogames.js"
 
 
-function videogameRouters(videogame) {
+function videogameRouters(videogameModel) {
     const router = Router();
-    router.get("/", getVideogames(videogame));
+    router.get("/", getVideogames(videogameModel));
     
-    router.get("/:id", getVideogame(videogame));
+    router.get("/:id", getVideogame(videogameModel));
     
-    router.post("/", registerVideogame(videogame));
+    router.post("/", registerVideogame(videogameModel));
     
-    router.delete("/:id", deleteVideogame(videogame))
+    router.delete("/:id", deleteVideogame(videogameModel))
     
-    router.patch("/:id", updateVideogame(videogame))
+    router.patch("/:id", updateVideogame(videogameModel))
     return router;
 }
 

@@ -3,17 +3,17 @@ import { getTeam, getTeams, deleteTeam, updateTeam, registerTeam } from "../cont
 
 
 
-function teamsRouters(team) {
+function teamsRouters(teamModel) {
     const router = Router();
-    router.get("/", getTeams(team));
+    router.get("/", getTeams(teamModel));
     
-    router.get("/:id", getTeam(team));
+    router.get("/:id", getTeam(teamModel));
     
-    router.post("/", registerTeam(team));
+    router.post("/", registerTeam(teamModel));
     
-    router.delete("/:id", deleteTeam(team))
+    router.delete("/:id", deleteTeam(teamModel))
     
-    router.patch("/:id", updateTeam(team))
+    router.patch("/:id", updateTeam(teamModel))
     return router;
 }
 

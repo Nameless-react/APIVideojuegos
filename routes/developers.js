@@ -3,17 +3,17 @@ import { getDeveloper, getDevelopers, registerDeveloper, deleteDeveloper, update
 
 
 
-function developersRouters(developer) {
+function developersRouters(developerModel) {
     const router = Router();
-    router.get("/", getDevelopers(developer));
+    router.get("/", getDevelopers(developerModel));
     
-    router.get("/:id", getDeveloper(developer));
+    router.get("/:id", getDeveloper(developerModel));
     
-    router.post("/", registerDeveloper(developer));
+    router.post("/", registerDeveloper(developerModel));
     
-    router.delete("/:id", deleteDeveloper(developer))
+    router.delete("/:id", deleteDeveloper(developerModel))
     
-    router.patch("/:id", updateDeveloper(developer))
+    router.patch("/:id", updateDeveloper(developerModel))
     return router;
 }
 

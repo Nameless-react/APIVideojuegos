@@ -1,10 +1,20 @@
+import logger from "../utils/logger.js";
 export default (error, req, res, next) => {
     const status = error.statusCode ?? 500;
-    console.error(error.stack + "\n\n");
-    console.error(error.name + "\n\n");
-    res.status(status).json({
+    logger.error(error.stack);
+
+    
+    if (error.isOperational) { 
+        return res.status(status).json({
+            status: error.status ?? "failed",
+            message: JSON.parse(error.message),
+            data: []
+        })
+    }
+
+    res.status(500).json({
         status: error.status ?? "failed",
-        message: JSON.parse(error.message),
+        message: "Something went wrong, try again",
         data: []
     })
 
