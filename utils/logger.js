@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-
+import chalk from "chalk";
 
 class Logger {
     constructor(name, dir = "./logs", cacheSize = 100) {
@@ -13,7 +13,7 @@ class Logger {
     }
 
     log (level, message) {
-        const output = `${new Date().toLocaleString()} | ${level} | ${message}`;
+        const output = `${new Date().toLocaleString()} | ${level} | ${chalk.reset(message)}`;
         console.log(message);
         this.cache.push(output);
         if (this.cache.length >= this.cacheSize) {
@@ -23,27 +23,29 @@ class Logger {
     }
 
     info(message) {
-        this.log("info", message)
+        this.log("info", chalk.blue(message))
     }
 
     debug(message) {
-        this.log("debug", message)
+
+        this.log("debug", chalk.yellow(message))
     }
 
     trace(message) {
-        this.log("trace", message)
+        this.log("trace", chalk.blackBright(message))
     }
 
     warn(message) {
-        this.log("warn", message)
+        const warning = chalk.hex('#FFA500');
+        this.log("warn", warning(message))
     }
 
     error(message) {
-        this.log("error", message)
+        this.log("error", chalk.red(message))
     }
 
     fatal(message) {
-        this.log("fatal", message)
+        this.log("fatal", chalk.red(message))
     }
 
     close() {

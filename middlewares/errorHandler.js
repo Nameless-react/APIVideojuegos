@@ -1,4 +1,5 @@
 import logger from "../utils/logger.js";
+
 export default (error, req, res, next) => {
     const status = error.statusCode ?? 500;
     logger.error(error.stack);

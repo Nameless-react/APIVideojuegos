@@ -23,6 +23,8 @@ const userSchema = new Schema({
     usage: [{
         date: {
             type: Date,
+            unique: true,
+            required: true,
             default: Date.now()
         },
         count: {
@@ -33,5 +35,22 @@ const userSchema = new Schema({
     
 })
 
+
+userSchema.statics.updateUsageCount = async function (userId) {
+    const today = new Date();
+    const todayMidnight = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
+    const user = await this.findById(userId);
+
+    if (!user) {
+        throw new Error("Usuario no encontrado");
+    }
+
+    const usageEntry = user.usage.find((entry) => entry.date.getTime() === todayMidnight.getTime());
+
+    usageEntry ? (usageEntry.count += 1) : user.usage.push({ date: todayMidnight, count: 1 });
+
+    return user.save();
+};
 
 export default model("user", userSchema);

@@ -1,0 +1,232 @@
+11/28/2023, 2:53:18 PM | error | Error: {"message":"Can't find / on the server"}
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/index.js:58:10
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:144:13)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at Route.dispatch (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:114:3)
+
+11/28/2023, 3:00:44 PM | error | Error: {"message":"Can't find /users/ on the server"}
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/index.js:65:10
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:144:13)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+11/28/2023, 3:00:51 PM | error | TypeError: Cannot read properties of undefined (reading 'length')
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/controllers/users.js:24:24
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/utils/errorWrapper.js:3:9
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:175:3)
+11/28/2023, 3:03:01 PM | error | ValidationError: user validation failed: password: Cast to string failed for value "Promise { <pending> }" (type Promise) at path "password", apiKey: Cast to string failed for value "Promise { <pending> }" (type Promise) at path "apiKey"
+    at Document.invalidate (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongoose/lib/document.js:3173:32)
+    at model.$set (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongoose/lib/document.js:1453:12)
+    at model.$set (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongoose/lib/document.js:1113:16)
+    at model.Document (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongoose/lib/document.js:164:12)
+    at model.Model (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongoose/lib/model.js:123:12)
+    at new model (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongoose/lib/model.js:4707:15)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongoose/lib/model.js:2911:18
+    at Array.map (<anonymous>)
+    at Function.create (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongoose/lib/model.js:2900:30)
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/controllers/users.js:42:21
+
+
+11/28/2023, 3:05:23 PM | error | ValidationError: user validation failed: password: Cast to string failed for value "Promise { <pending> }" (type Promise) at path "password", apiKey: Cast to string failed for value "Promise { <pending> }" (type Promise) at path "apiKey"
+    at Document.invalidate (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongoose/lib/document.js:3173:32)
+    at model.$set (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongoose/lib/document.js:1453:12)
+    at model.$set (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongoose/lib/document.js:1113:16)
+    at model.Document (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongoose/lib/document.js:164:12)
+    at model.Model (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongoose/lib/model.js:123:12)
+    at new model (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongoose/lib/model.js:4707:15)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongoose/lib/model.js:2911:18
+    at Array.map (<anonymous>)
+    at Function.create (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongoose/lib/model.js:2900:30)
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/controllers/users.js:44:21
+11/28/2023, 3:08:42 PM | error | Error: {"message":"Can't find /users/6566565684b4bc9d9e907aa9 on the server"}
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/index.js:65:10
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:144:13)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+
+
+
+
+
+
+11/28/2023, 3:35:58 PM | error | ReferenceError: result is not defined
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/controllers/users.js:96:5
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/utils/errorWrapper.js:3:9
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:376:14)
+    at Function.process_params (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:421:3)
+
+
+
+
+11/28/2023, 3:40:35 PM | error | Error: data and hash arguments required
+    at Object.compare (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/bcrypt/bcrypt.js:208:17)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/bcrypt/promises.js:29:12
+    at new Promise (<anonymous>)
+    at module.exports.promise (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/bcrypt/promises.js:20:12)
+    at Object.compare (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/bcrypt/bcrypt.js:204:25)
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:16:37
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+11/28/2023, 3:41:26 PM | error | Error: data and hash arguments required
+    at Object.compare (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/bcrypt/bcrypt.js:208:17)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/bcrypt/promises.js:29:12
+    at new Promise (<anonymous>)
+    at module.exports.promise (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/bcrypt/promises.js:20:12)
+    at Object.compare (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/bcrypt/bcrypt.js:204:25)
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:16:37
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+11/28/2023, 3:42:15 PM | error | Error: data and hash arguments required
+    at Object.compare (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/bcrypt/bcrypt.js:208:17)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/bcrypt/promises.js:29:12
+    at new Promise (<anonymous>)
+    at module.exports.promise (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/bcrypt/promises.js:20:12)
+    at Object.compare (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/bcrypt/bcrypt.js:204:25)
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:17:37
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+11/28/2023, 3:42:31 PM | error | Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:406:5)
+    at ServerResponse.setHeader (node:_http_outgoing:652:11)
+    at ServerResponse.header (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/response.js:794:10)
+    at ServerResponse.send (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/response.js:174:12)
+    at ServerResponse.json (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/response.js:278:15)
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/controllers/users.js:17:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+11/28/2023, 3:43:55 PM | error | Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:406:5)
+    at ServerResponse.setHeader (node:_http_outgoing:652:11)
+    at ServerResponse.header (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/response.js:794:10)
+    at ServerResponse.send (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/response.js:174:12)
+    at ServerResponse.json (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/response.js:278:15)
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/controllers/users.js:17:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+
+
+
+
+
+
+
+11/28/2023, 3:57:40 PM | error | TypeError: user.roles.any is not a function
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:19:82
+
+11/28/2023, 4:00:14 PM | error | TypeError: [object Array] is not a function
+    at Proxy.some (<anonymous>)
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:19:82
+
+
+11/28/2023, 4:21:08 PM | error | TypeError: "//users/[a-zA-Z0-9]*/".test is not a function
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:20:43
+11/28/2023, 4:21:23 PM | error | Error: {"message":"Don't have the right permissions to access the endpoint /users/"}
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:20:116
+11/28/2023, 4:22:12 PM | error | Error: {"message":"Don't have the right permissions to access the endpoint /users/generateKey/5678efghji7654ertghji8765r"}
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:20:116
+
+
+
+11/28/2023, 4:30:10 PM | info | {
+  _id: new ObjectId("6566565684b4bc9d9e907aa9"),
+  name: 'Joel García',
+  email: 'joel33960@gmail.com',
+  password: '$2b$10$Qf8EtCgkScF3vEZ9hUlk1uzXaMjpPiKxbSAkrovF.D9vKQYK8n9zK',
+  apiKey: '$2b$10$bn8noldsZI.UaPodHhwDjOJRzhSBldfNx3VG9fTO52nSUhRsv27hK',
+  roles: [ 'User' ],
+  usage: [],
+  __v: 0
+}
+
+11/28/2023, 4:40:27 PM | info | Joel García ROLES: User
+11/28/2023, 4:41:57 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers
+
+
+
+
+
+
+
+
+11/28/2023, 4:56:23 PM | info | [34mUSER: Joel García[39m
+[34mROLES: User[39m
+[34mENDPOINT: /developers[39m
+[34m------------------------------[39m
+[34m[39m
+11/28/2023, 4:56:54 PM | info | [34mUSER: Joel García[39m
+[34mROLES: User[39m
+[34mENDPOINT: /videogames[39m
+[34m------------------------------[39m
+[34m[39m
+11/28/2023, 4:57:44 PM | info | [34mUSER: Joel García[39m
+[34m                [39m
+[34mROLES: User[39m
+[34m                [39m
+[34mENDPOINT: /videogames[39m
+[34m                [39m
+[34mMETHOD: GET[39m
+[34m                [39m
+[34m------------------------------[39m
+[34m[39m
+11/28/2023, 5:01:14 PM | info | [0m[34mUSER: Joel García[39m[0m
+[0m[34m                [39m[0m
+[0m[34mROLES: User[39m[0m
+[0m[34m                [39m[0m
+[0m[34mENDPOINT: /videogames[39m[0m
+[0m[34m                [39m[0m
+[0m[34mMETHOD: GET[39m[0m
+[0m[34m                [39m[0m
+[0m[34m------------------------------[39m[0m
+[0m[34m[39m[0m
+
+
+
+11/28/2023, 5:36:42 PM | info | [0m[34mUSER: Joel García[39m[0m
+[0m[34m                [39m[0m
+[0m[34mROLES: User[39m[0m
+[0m[34m                [39m[0m
+[0m[34mENDPOINT: /videogames[39m[0m
+[0m[34m                [39m[0m
+[0m[34mMETHOD: GET[39m[0m
+[0m[34m                [39m[0m
+[0m[34m------------------------------[39m[0m
+[0m[34m[39m[0m
+11/28/2023, 5:36:42 PM | error | [0m[31mTypeError: userModel.updateUsageCount is not a function[39m[0m
+[0m[31m    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/userInfo.js:12:21[39m[0m
+[0m[31m    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/utils/errorWrapper.js:3:9[39m[0m
+[0m[31m    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)[39m[0m
+[0m[31m    at trim_prefix (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:328:13)[39m[0m
+[0m[31m    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:286:9[39m[0m
+[0m[31m    at Function.process_params (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:346:12)[39m[0m
+[0m[31m    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:280:10)[39m[0m
+[0m[31m    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:22:20[39m[0m
+

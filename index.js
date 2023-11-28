@@ -25,7 +25,11 @@ import commentModel from "./db/comment.js"
 import userModel from "./db/user.js"
 
 
+
+
 import logger from "./utils/logger.js";
+import auth from "./middlewares/auth.js";
+import userInfo from "./middlewares/userInfo.js";
 
 process.on('SIGTERM', signal => {
     logger.close();
@@ -45,6 +49,14 @@ app.use(express.json());
 app.use(cors());
 const connect = connection();
 
+app.get("/", (req, res) => {
+    res.status(200).json({
+        message: "API de videojuegos"
+    })
+})
+
+app.use(auth(userModel));
+app.use(userInfo(userModel));
 
 app.use("/videogames", videogameRouter(videogameModel));
 app.use("/users", userRouter(userModel));
