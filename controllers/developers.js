@@ -1,6 +1,6 @@
 import { validateDeveloper, validatePartialDeveloper } from "../schemas/developer.js"
 import { filters } from "../utils/filterDevelopers.js"
-import { capitalize } from "../utils/utils.js";
+import { capitalize, isValidNumber } from "../utils/utils.js";
 import config from "../config/config.js"
 import errorWrapper from "../utils/errorWrapper.js";
 import { CustomError } from "../utils/customError.js";
@@ -8,24 +8,37 @@ import { CustomError } from "../utils/customError.js";
 
 
 export const getDevelopers = (developerModel) => errorWrapper(async (req, res) => {
-    const { name, minEmployees, maxEmployees, employeesNumber, foundation, web} = req.query;
+    const { name, minEmployees, maxEmployees, employeesNumber, foundation, web, minYear, maxYear} = req.query;
     let minEmployeesNumber = parseInt(minEmployees);
     let maxEmployeesNumber = parseInt(maxEmployees);
+    let minYearNumber = parseInt(minYear)
+    let maxYearNumber = parseInt(maxYear)
+
+    
+    if (!isValidNumber(minEmployeesNumber) || !isValidNumber(maxEmployeesNumber)) throw new CustomError(JSON.stringify({message: "Min or Max number of employees are not valid"}), 400, "failed");
+    if (!isValidNumber(minYearNumber) || !isValidNumber(maxYearNumber)) throw new CustomError(JSON.stringify({message: "Min or Max year are not valid"}), 400, "failed");
 
     const fields = {
         name: parseInt(name) === 1 ? 1 : name,
         number_employees: parseInt(employeesNumber) === 1 ? 1 : employeesNumber,
         foundation: parseInt(foundation) === 1 ? 1 : foundation,
-        web: parseInt(web) === 1 ? 1 : web
+        web: parseInt(web) === 1 ? 1 : web,
+        minEmployees: minEmployeesNumber,
+        maxEmployees: maxEmployeesNumber,
+        maxYear: maxYearNumber,
+        minYear: minYearNumber
     }
 
-    const finalFields = Object.fromEntries(Object.entries(fields).filter(field => field[1] === 1));
 
-    if ((minEmployeesNumber && isNaN(minEmployeesNumber)) || (maxEmployeesNumber && isNaN(maxEmployeesNumber))) throw new CustomError(JSON.stringify({message: "Min or Max number of employees are not valid"}), 400, "failed");
+
+    
+    const selectedFields = Object.fromEntries(Object.entries(fields).filter(field => field[1] === 1));
+
+
 
     const respond = await developerModel.find(filters(Object.entries(fields).filter(([key, value]) => value !== 1 && value)), {
         _id: 0,
-        ...finalFields
+        ...selectedFields
     });
     
 

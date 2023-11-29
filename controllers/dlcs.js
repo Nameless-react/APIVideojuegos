@@ -1,14 +1,42 @@
 import { validateDlc, validatePartialDlc } from "../schemas/dlc.js"
-import { capitalize } from "../utils/utils.js";
+import { capitalize, isValidNumber } from "../utils/utils.js";
 import config from "../config/config.js"
 import errorWrapper from "../utils/errorWrapper.js";
 import { CustomError } from "../utils/customError.js";
-
-
+import { filters } from "../utils/filterDlc.js";
 
 export const getDlcs = (dlcModel) => errorWrapper(async (req, res) => {
-    const respond = await dlcModel.find({}, {
+    const { name, description, price, releaseDate, videogame, minRelease, maxRelease, minPrice, maxPrice } = req.query;
+    let maxReleaseDateNumber = parseInt(maxRelease);
+    let minReleaseDateNumber = parseInt(minRelease);
+    let maxPriceNumber = parseInt(maxPrice);
+    let minPriceNumber = parseInt(minPrice);
+
+
+    if (!isValidNumber(minReleaseDateNumber) || !isValidNumber(maxReleaseDateNumber)) throw new CustomError(JSON.stringify({message: "Min or Max year of the release of the videogame are not valid"}), 400, "failed");
+    if (!isValidNumber(minPriceNumber) || !isValidNumber(maxPriceNumber)) throw new CustomError(JSON.stringify({message: "Min or Max price are not valid"}), 400, "failed");
+
+
+    const fields = {
+        name: parseInt(name) === 1 ? 1 : name,
+        description: parseInt(description) === 1 ? 1 : description,
+        price: parseInt(price) === 1 ? 1 : price,
+        videogame: parseInt(videogame) === 1 ? 1 : videogame,
+        releaseDate: parseInt(releaseDate) === 1 ? 1 : releaseDate,
+        minPrice: minPriceNumber,
+        maxPrice: maxPriceNumber,
+        minRelease: minReleaseDateNumber,
+        maxRelease: maxReleaseDateNumber
+    }
+
+
+    
+    const selectedFields = Object.fromEntries(Object.entries(fields).filter(field => field[1] === 1));
+
+
+    const respond = await dlcModel.find(filters(Object.entries(fields).filter(([key, value]) => value !== 1 && value)), {
         _id: 0,
+        ...selectedFields
     });
     
 

@@ -1,11 +1,39 @@
 import { validatePartialVideogame, validateVideogame } from "../schemas/videogame.js";
-import { capitalize } from "../utils/utils.js";
+import { capitalize, isValidNumber } from "../utils/utils.js";
 import errorWrapper from "../utils/errorWrapper.js";
 import { CustomError } from "../utils/customError.js";
+import { filters } from "../utils/filterVideogames.js";
 
 
 export const getVideogames = (videogameModel) => errorWrapper(async (req, res) => {
-    const respond = await videogameModel.find();
+        
+    const { title, description, releaseDate, developer, genre, image, minRelease, maxRelease } = req.query;
+    let maxReleaseDateNumber = parseInt(maxRelease);
+    let minReleaseDateNumber = parseInt(minRelease);
+    
+
+    
+    if (!isValidNumber(minReleaseDateNumber) || !isValidNumber(maxReleaseDateNumber)) throw new CustomError(JSON.stringify({message: "Min or Max year of the release of the videogame are not valid"}), 400, "failed");
+    
+    const fields = {
+        title: parseInt(title) === 1 ? 1 : title,
+        description: parseInt(description) === 1 ? 1 : description,
+        releaseDate: parseInt(releaseDate) === 1 ? 1 : releaseDate,
+        developer: parseInt(developer) === 1 ? 1 : developer,
+        genre: parseInt(genre) === 1 ? 1 : (genre && genre.split(",")),
+        image: parseInt(image) === 1 ? 1 : image,
+        minRelease: minReleaseDateNumber,
+        maxRelease: maxReleaseDateNumber
+    }
+    
+    const selectedFields = Object.fromEntries(Object.entries(fields).filter(field => field[1] === 1));
+
+
+    const respond = await videogameModel.find(filters(Object.entries(fields).filter(([key, value]) => value !== 1 && value)), {
+        _id: 0,
+        ...selectedFields
+    });
+
     res.status(200).json({
         status: "success",
         data: respond

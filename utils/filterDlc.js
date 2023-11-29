@@ -1,29 +1,33 @@
-import developerModel from "../db/developer.js";
+import dlcModel from "../db/dlc.js";
 
 const operations = {
-    minEmployees: (query, min) => {
-        return query.where("number_employees").gte(min);
+    minPrice: (query, min) => {
+        return query.where("price").gte(min);
     },
-    maxEmployees: (query, max) => {
-        return query.where("number_employees").lte(max);
+    maxPrice: (query, max) => {
+        return query.where("price").lte(max);
     },
     name: (query, name) => {
         let regex = new RegExp(name, "i");
         return query.where("name").regex(regex);
     },
-    minYear: (query, year) => {
+    minRelease: (query, year) => {
         const date = new Date(`${year}-01-01T23:59:59Z`);
-        return query.where("foundation").gte(date);
+        return query.where("release_date").gte(date);
     },
-    maxYear: (query, year) => {
+    maxRelease: (query, year) => {
         const date = new Date(`${year}-12-31T23:59:59Z`);
-        return query.where("foundation").lte(date);
+        return query.where("release_date").lte(date);
+    },
+    videogame: (query, title) => {
+        let regex = new RegExp(title, "i");
+        return query.where("videogame").regex(regex);
     }
 }
 
 export function filters(args) {
     if (args.length === 0) return {};
-    let query = developerModel.find();
+    let query = dlcModel.find();
     let modifications = 0;
     for (const [func, values] of args) {
         if (!operations[func]) continue;
