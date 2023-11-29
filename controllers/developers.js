@@ -13,16 +13,17 @@ export const getDevelopers = (developerModel) => errorWrapper(async (req, res) =
     let maxEmployeesNumber = parseInt(maxEmployees);
 
     const fields = {
-        name: parseInt(name) === 1,
-        number_employees: employeesNumber,
-        foundation,
-        web
+        name: parseInt(name) === 1 ? 1 : name,
+        number_employees: parseInt(employeesNumber) === 1 ? 1 : employeesNumber,
+        foundation: parseInt(foundation) === 1 ? 1 : foundation,
+        web: parseInt(web) === 1 ? 1 : web
     }
-    const finalFields = Object.fromEntries(Object.entries(fields).filter(field => field[1]).map(field => [field[0], parseInt(field[1])]));
+
+    const finalFields = Object.fromEntries(Object.entries(fields).filter(field => field[1] === 1));
 
     if ((minEmployeesNumber && isNaN(minEmployeesNumber)) || (maxEmployeesNumber && isNaN(maxEmployeesNumber))) throw new CustomError(JSON.stringify({message: "Min or Max number of employees are not valid"}), 400, "failed");
 
-    const respond = await developerModel.find(filters(Object.entries(req.query)), {
+    const respond = await developerModel.find(filters(Object.entries(fields).filter(([key, value]) => value !== 1 && value)), {
         _id: 0,
         ...finalFields
     });

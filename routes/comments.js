@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { getcomment, getcomments, registercomment, deletecomment, updatecomment } from "../controllers/comments.js"
+import { getComment, getComments, registerComment, deleteComment, updateComment } from "../controllers/comments.js"
 
 
 
 function commentsRouters(commentsModel) {
     const router = Router();
-    router.get("/", getComment(commentsModel));
+    router.get("/", getComments(commentsModel));
     
     router.get("/:id", getComment(commentsModel));
     

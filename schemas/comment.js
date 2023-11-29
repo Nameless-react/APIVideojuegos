@@ -1,31 +1,32 @@
 import z from "zod";
 
 const commentValidations = z.object({
-    name: z.string({
-        invalid_type_error: "The name must be a string",
-        required_error: "The field name is required"
+    content: z.string({
+        invalid_type_error: "The content must be a string",
+        required_error: "The field content is required"
     }),
-    foundation: z.string().refine(value => {
+    puntuation: z.number({
+        invalid_type_error: "The puntuation must be a number",
+        required_error: "The field puntuation is required"
+    }).positive({
+        message: "The puntuation must be greater than zero"
+    }),
+    videogame: z.string({
+        invalid_type_error: "The videogame must be a string",
+        required_error: "The field videogame is required"
+    }),
+    date: z.string().refine(value => {
         const date = new Date(value);
         if (isNaN(date)) return false;
         return date < new Date();
     },{
-        invalid_type_error: "The Foundation must be a date",
-        required_error: "The field foundation is required"
+        invalid_type_error: "The date of the comment must be a date",
+        required_error: "The field date is required"
     }),
-    number_employees: z.number({
-        invalid_type_error: "The number of employees must be a number",
-        required_error: "The field nmber_employees is required"    
-    }).int().positive({
-        message: "The number of employees must be positive"
+    author: z.string({
+        invalid_type_error: "The author must be a string",
+        required_error: "The field author is required"
     }),
-    web: z.string({
-        invalid_type_error: "The url of the web must be a string",
-        required_error: "The field web is required"        
-    }).url({
-        message: "Invalid url for web"
-    })
-
 })
 
 export const validateComment = (object) =>  commentValidations.safeParse(object);

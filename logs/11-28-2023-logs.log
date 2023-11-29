@@ -1,0 +1,240 @@
+11/28/2023, 11:11:10 PM | error | Error: {"message":"Not authorize to access the endpoint /comments"}
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:6:43
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/utils/errorWrapper.js:3:9
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:328:13)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:280:10)
+    at cors (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/cors/lib/index.js:188:7)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/cors/lib/index.js:224:17
+    at originCallback (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/cors/lib/index.js:214:15)
+
+11/28/2023, 11:13:13 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1
+METHOD: GET
+------------------------------
+
+
+11/28/2023, 11:15:06 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1
+METHOD: GET
+------------------------------
+
+
+
+
+11/28/2023, 11:16:00 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1
+METHOD: GET
+------------------------------
+
+
+11/28/2023, 11:17:10 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1
+METHOD: GET
+------------------------------
+
+11/28/2023, 11:17:20 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1&foundation=1
+METHOD: GET
+------------------------------
+
+
+11/28/2023, 11:17:55 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1&foundation=1
+METHOD: GET
+------------------------------
+
+
+
+
+11/28/2023, 11:20:26 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1&foundation=1
+METHOD: GET
+------------------------------
+
+11/28/2023, 11:21:33 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1&foundation=1&web=fd
+METHOD: GET
+------------------------------
+
+
+
+
+
+
+
+
+11/28/2023, 11:24:28 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1&foundation=1&web=fd
+METHOD: GET
+------------------------------
+
+11/28/2023, 11:24:28 PM | error | ReferenceError: number_employees is not defined
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/controllers/developers.js:17:65
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/utils/errorWrapper.js:3:9
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:175:3)
+
+11/28/2023, 11:25:12 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1&foundation=1&web=fd
+METHOD: GET
+------------------------------
+
+
+11/28/2023, 11:25:53 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1&foundation=1&web=fd
+METHOD: GET
+------------------------------
+
+
+11/28/2023, 11:26:38 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1&foundation=1&web=fd
+METHOD: GET
+------------------------------
+
+
+11/28/2023, 11:28:29 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1&foundation=1&web=fd
+METHOD: GET
+------------------------------
+
+11/28/2023, 11:28:29 PM | error | TypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))
+    at Function.fromEntries (<anonymous>)
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/controllers/developers.js:27:62
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/utils/errorWrapper.js:3:9
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:280:10)
+
+11/28/2023, 11:29:32 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1&foundation=1&web=fd
+METHOD: GET
+------------------------------
+
+11/28/2023, 11:29:32 PM | error | TypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))
+    at Function.fromEntries (<anonymous>)
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/controllers/developers.js:27:77
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/utils/errorWrapper.js:3:9
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:280:10)
+
+11/28/2023, 11:30:05 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1&foundation=1&web=fd
+METHOD: GET
+------------------------------
+
+
+
+
+11/28/2023, 11:31:07 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1&foundation=1&web=fd
+METHOD: GET
+------------------------------
+
+
+11/28/2023, 11:31:50 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1&foundation=1&web=fd
+METHOD: GET
+------------------------------
+
+
+11/28/2023, 11:33:12 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1&foundation=1&web=fd
+METHOD: GET
+------------------------------
+
+
+11/28/2023, 11:33:40 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1&foundation=1&web=fd
+METHOD: GET
+------------------------------
+
+
+11/28/2023, 11:40:09 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1&foundation=1&web=fd
+METHOD: GET
+------------------------------
+
+11/28/2023, 11:40:09 PM | error | ReferenceError: modifications is not defined
+    at filters (file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/utils/filterDevelopers.js:26:19)
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/controllers/developers.js:27:47
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/utils/errorWrapper.js:3:9
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:280:10)
+
+11/28/2023, 11:40:33 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1&foundation=1&web=fd
+METHOD: GET
+------------------------------
+
+11/28/2023, 11:40:33 PM | error | ReferenceError: modifications is not defined
+    at filters (file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/utils/filterDevelopers.js:26:19)
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/controllers/developers.js:27:47
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/utils/errorWrapper.js:3:9
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:280:10)
+
+11/28/2023, 11:40:56 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1&foundation=1&web=fd
+METHOD: GET
+------------------------------
+
+
+11/28/2023, 11:41:31 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1&foundation=1&web=fd
+METHOD: GET
+------------------------------
+
+
+
+

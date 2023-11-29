@@ -22,10 +22,13 @@ const operations = {
 export function filters(args) {
     if (args.length === 0) return {};
     let query = developer.find();
+    let modifications = 0;
     for (const [func, values] of args) {
         if (!operations[func]) continue;
-
+        modifications++;
         query = operations[func](query, values)
     }
+
+    if (modifications === 0) return {};
     return query;
 }

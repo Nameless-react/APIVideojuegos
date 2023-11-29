@@ -1,5 +1,5 @@
 import { validateComment, validatePartialComment } from "../schemas/comment.js"
-import { filters } from "../utils/filterComment.js"
+// import { filters } from "../utils/filterComment.js"
 import { capitalize } from "../utils/utils.js";
 import config from "../config/config.js"
 import errorWrapper from "../utils/errorWrapper.js";
@@ -7,24 +7,18 @@ import { CustomError } from "../utils/customError.js";
 
 
 
-export const getComments = (CommentModel) => errorWrapper(async (req, res) => {
-    const { name, minEmployees, maxEmployees, employeesNumber, foundation, web} = req.query;
-    let minEmployeesNumber = parseInt(minEmployees);
-    let maxEmployeesNumber = parseInt(maxEmployees);
+export const getComments = (commentModel) => errorWrapper(async (req, res) => {
+    // const fields = {
+    //     name: parseInt(name) === 1,
+    //     number_employees: employeesNumber,
+    //     foundation,
+    //     web
+    // }
+    // const finalFields = Object.fromEntries(Object.entries(fields).filter(field => field[1]).map(field => [field[0], parseInt(field[1])]));
 
-    const fields = {
-        name: parseInt(name) === 1,
-        number_employees: employeesNumber,
-        foundation,
-        web
-    }
-    const finalFields = Object.fromEntries(Object.entries(fields).filter(field => field[1]).map(field => [field[0], parseInt(field[1])]));
 
-    if ((minEmployeesNumber && isNaN(minEmployeesNumber)) || (maxEmployeesNumber && isNaN(maxEmployeesNumber))) throw new CustomError(JSON.stringify({message: "Min or Max number of employees are not valid"}), 400, "failed");
-
-    const respond = await CommentModel.find(filters(Object.entries(req.query)), {
+    const respond = await commentModel.find({}, {
         _id: 0,
-        ...finalFields
     });
     
 
@@ -34,7 +28,7 @@ export const getComments = (CommentModel) => errorWrapper(async (req, res) => {
     });
 })
 
-export const getComment = (commentsModelModel) => errorWrapper(async (req, res) => {
+export const getComment = (commentModel) => errorWrapper(async (req, res) => {
     const { id } = req.params;
     let regexName = new RegExp(capitalize(id), "i");        
     const respond = id.length < 24 ? await commentModel.findOne({name: {$regex: regexName}}) : await commentModel.findById(id, {__v: 0}); 
@@ -47,7 +41,7 @@ export const getComment = (commentsModelModel) => errorWrapper(async (req, res) 
 })
 
 
-export const registerComment = (commentModelModel) => errorWrapper(async (req, res) => {
+export const registerComment = (commentModel) => errorWrapper(async (req, res) => {
     const result = validateDeveloper(req.body);
     if (result.error) throw new CustomError(result.error.message, 400);
     

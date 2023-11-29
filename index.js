@@ -13,6 +13,7 @@ import videogameRouter from "./routes/videogames.js";
 import teamRouter from "./routes/teams.js";
 import dlcRouter from "./routes/dlcs.js";
 import roleRouter from "./routes/roles.js";
+import commentRouter from "./routes/comments.js"
 
 
 //Models
@@ -33,13 +34,23 @@ import userInfo from "./middlewares/userInfo.js";
 
 process.on('SIGTERM', signal => {
     logger.close();
-    process.exit(0)
+    process.exit(0);
 })
 
 process.on('SIGINT', signal => {
     logger.close();
-    process.exit(0)
-  })
+    process.exit(0);
+})
+
+process.on("exit", signal => {
+    logger.close();
+    process.exit(0);
+}
+)
+process.on("beforeExit", signal => {
+    logger.close();
+    process.exit(0);
+})
 
 
 const app = express();
@@ -60,6 +71,7 @@ app.use(userInfo(userModel));
 
 app.use("/videogames", videogameRouter(videogameModel));
 app.use("/users", userRouter(userModel));
+app.use("/comments", commentRouter(commentModel));
 app.use("/developers", developerRouter(developerModel));
 app.use("/teams", teamRouter(teamModel));
 app.use("/dlcs", dlcRouter(dlcModel));
