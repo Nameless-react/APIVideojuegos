@@ -3,14 +3,30 @@ import errorWrapper from "../utils/errorWrapper.js";
 import { CustomError } from "../utils/customError.js";
 import bcrypt from "bcrypt";
 import { randomUUID } from "node:crypto";
-
+import { filters } from "../utils/filterUser.js"
 
 
 export const getUsers = (userModel) => errorWrapper(async (req, res) => {
-    const respond = await userModel.find({}, {
+    const { name, email, roles, usage } = req.query;
+
+    const fields = {
+        name: parseInt(name) === 1 ? 1 : name,
+        email: parseInt(email) === 1 ? 1 : email,
+        roles: parseInt(roles) === 1 ? 1 : (roles && roles.split(",")),
+        usage: parseInt(usage) === 1 ? 1 : usage,
+    }
+
+
+
+    
+    const selectedFields = Object.fromEntries(Object.entries(fields).filter(field => field[1] === 1));
+
+
+    const respond = await userModel.find(filters(Object.entries(fields).filter(([key, value]) => value !== 1 && value)), {
         _id: 0,
         apiKey: 0,
-        password: 0
+        password: 0,
+        ...selectedFields
     });
     
 

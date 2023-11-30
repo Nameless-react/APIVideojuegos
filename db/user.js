@@ -1,4 +1,5 @@
 import { Schema, model } from "mongoose";
+import { CustomError } from "../utils/customError.js";
 
 const userSchema = new Schema({
     name: {
@@ -23,7 +24,6 @@ const userSchema = new Schema({
     usage: [{
         date: {
             type: Date,
-            unique: true,
             required: true,
             default: Date.now()
         },
@@ -43,7 +43,7 @@ userSchema.statics.updateUsageCount = async function (userId) {
     const user = await this.findById(userId);
 
     if (!user) {
-        throw new Error("Usuario no encontrado");
+        throw new CustomError(JSON.stringify({message: "User not found for update"}), 404, "Not found");
     }
 
     const usageEntry = user.usage.find((entry) => entry.date.getTime() === todayMidnight.getTime());

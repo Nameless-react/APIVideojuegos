@@ -3,7 +3,7 @@ import { validateTeam, validatePartialTeam } from "../schemas/team.js"
 import config from "../config/config.js"
 import errorWrapper from "../utils/errorWrapper.js";
 import { CustomError } from "../utils/customError.js";
-
+import { filters } from "../utils/filterTeam.js";
 
 
 
@@ -11,16 +11,17 @@ export const getTeams = (teamModel) => errorWrapper(async (req, res) => {
     const { name, description, achievements, games} = req.query;
 
     const fields = {
-        name: parseInt(name) === 1,
-        description,
-        achievements,
-        games
+        name: parseInt(name) === 1 ? 1 : name,
+        description: parseInt(description) === 1 ? 1 : description,
+        achievements: parseInt(achievements) === 1 ? 1: (achievements && achievements.split(",")),
+        games: parseInt(games) === 1 ? 1 : (games && games.split(","))
     }
-    const finalFields = Object.fromEntries(Object.entries(fields).filter(field => field[1]).map(field => [field[0], parseInt(field[1])]));
+    const selectedFields = Object.fromEntries(Object.entries(fields).filter(field => field[1] === 1));
 
-    const respond = await teamModel.find({}, {
+
+    const respond = await teamModel.find(filters(Object.entries(fields).filter(([key, value]) => value !== 1 && value)), {
         _id: 0,
-        ...finalFields
+        ...selectedFields
     });
     
 
@@ -73,7 +74,7 @@ export const deleteTeam = (teamModel) => errorWrapper(async (req, res) => {
     })
 })
 
-export const updateTeam = (teamModel) => errorWrapper(async (req, res, next) => {
+export const updateTeam = (teamModel) => errorWrapper(async (req, res) => {
     const { id } = req.params;
     const result = validatePartialTeam(req.body);
 

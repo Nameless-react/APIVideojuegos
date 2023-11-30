@@ -7,7 +7,7 @@ export default (userModel) => errorWrapper(async (req, res, next) => {
 ROLES: ${res.locals.user.roles.join(", ")}
 ENDPOINT: ${req.originalUrl}
 METHOD: ${req.method}
-------------------------------\n`);
+------------------------------`);
     await userModel.updateUsageCount(res.locals.user._id);
     next();
 })

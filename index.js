@@ -90,3 +90,6 @@ app.use(errorHandler);
 app.listen(config.port, () => {
     console.log(`El servidor está corriendo en el puerto http://localhost:${config.port}`);   
 })
+
+
+//*Verificar el funcionamiento de los filtros en las colecciones de users, además de implementar la inyección de dependencias a los filtros

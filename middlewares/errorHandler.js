@@ -2,6 +2,8 @@ import logger from "../utils/logger.js";
 
 export default (error, req, res, next) => {
     const status = error.statusCode ?? 500;
+    if (!res.locals.user) res.locals.user = {name: "unknown", roles: []}
+
     logger.error(`USER: ${res.locals.user.name}
 ROLES: ${res.locals.user.roles.join(", ")}
 ENDPOINT: ${req.originalUrl}

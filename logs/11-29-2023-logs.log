@@ -961,3 +961,628 @@ ERROR: ReferenceError: isValidNumber is not defined
     at Function.handle (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:175:3)
 ----------------------------------
 
+11/29/2023, 5:03:15 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /dlcs?minPrice=5&maxPrice=15
+METHOD: GET
+------------------------------
+
+11/29/2023, 5:04:04 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /dlcs?minPrice=5&maxPrice=15&name=1
+METHOD: GET
+------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+11/29/2023, 9:39:03 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /teams
+METHOD: GET
+------------------------------
+
+11/29/2023, 9:39:12 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /teams?name=1
+METHOD: GET
+------------------------------
+
+
+11/29/2023, 9:40:25 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /teams?name=1
+METHOD: GET
+------------------------------
+
+
+11/29/2023, 9:40:51 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /teams?name=1
+METHOD: GET
+------------------------------
+
+
+11/29/2023, 9:41:57 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /teams?name=1
+METHOD: GET
+------------------------------
+
+11/29/2023, 9:42:08 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /developers?name=1
+METHOD: GET
+------------------------------
+
+
+
+
+11/29/2023, 9:43:34 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /teams?name=1
+METHOD: GET
+------------------------------
+
+11/29/2023, 9:43:35 PM | error | USER: Joel García
+ROLES: User
+ENDPOINT: /teams?name=1
+METHOD: GET
+ERROR: ReferenceError: finalFields is not defined
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/controllers/teams.js:22:17
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/utils/errorWrapper.js:3:9
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:175:3)
+----------------------------------
+
+11/29/2023, 9:43:56 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /teams?name=1
+METHOD: GET
+------------------------------
+
+
+11/29/2023, 9:44:31 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /teams?name=1
+METHOD: GET
+------------------------------
+
+11/29/2023, 9:44:50 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /teams?name=1&achievements=1
+METHOD: GET
+------------------------------
+
+
+11/29/2023, 9:45:39 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /teams?name=1&achievements=Esports%20Championships
+METHOD: GET
+------------------------------
+
+11/29/2023, 9:46:26 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /teams?name=1&achievements=Esports%20Championships
+METHOD: GET
+------------------------------
+
+11/29/2023, 9:47:52 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /teams?name=1&achievements=Esports%20Championships
+METHOD: GET
+------------------------------
+
+11/29/2023, 9:48:19 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /teams?name=1&achievements=Esports%20Championships
+METHOD: GET
+------------------------------
+
+
+11/29/2023, 9:48:36 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /teams?name=1&achievements=Esports%20Championships
+METHOD: GET
+------------------------------
+
+
+
+
+11/29/2023, 9:49:19 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /teams?name=1&achievements=Esports%20Championships
+METHOD: GET
+------------------------------
+
+
+11/29/2023, 9:50:17 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /teams?name=1&achievements=Esports%20Legacy
+METHOD: GET
+------------------------------
+
+11/29/2023, 9:50:46 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /teams?name=1&games=CS:GO
+METHOD: GET
+------------------------------
+
+11/29/2023, 9:51:00 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /teams?games=CS:GO
+METHOD: GET
+------------------------------
+
+11/29/2023, 9:51:18 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /teams?games=CS:GO,VALORANT
+METHOD: GET
+------------------------------
+
+11/29/2023, 9:52:03 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /teams?games=CS:GO
+METHOD: GET
+------------------------------
+
+
+11/29/2023, 9:53:20 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /roles
+METHOD: GET
+------------------------------
+
+
+
+
+11/29/2023, 9:54:53 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /roles
+METHOD: GET
+------------------------------
+
+
+11/29/2023, 9:56:49 PM | info | USER: Joel García
+ROLES: User
+ENDPOINT: /roles
+METHOD: GET
+------------------------------
+
+
+
+
+
+
+
+
+11/29/2023, 9:59:58 PM | error | USER: unknown
+ROLES: 
+ENDPOINT: /roles/
+METHOD: GET
+ERROR: Error: {"message":"Don't have the right permissions to access the endpoint \"/roles/\""}
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:15:138
+----------------------------------
+
+11/29/2023, 10:17:48 PM | error | USER: unknown
+ROLES: 
+ENDPOINT: /roles/
+METHOD: GET
+ERROR: Error: {"message":"Don't have the right permissions to access the endpoint /roles/"}
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:15:138
+----------------------------------
+
+11/29/2023, 10:21:08 PM | error | USER: unknown
+ROLES: 
+ENDPOINT: /roles/
+METHOD: POST
+ERROR: Error: {"message":"Don't have the right permissions to access the endpoint /roles/"}
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:15:138
+----------------------------------
+
+11/29/2023, 10:22:42 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /roles/
+METHOD: GET
+------------------------------
+
+11/29/2023, 10:24:16 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments
+METHOD: GET
+------------------------------
+11/29/2023, 10:24:16 PM | error | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments
+METHOD: GET
+ERROR: ReferenceError: isValidNumber is not defined
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/controllers/comments.js:18:5
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/utils/errorWrapper.js:3:9
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:175:3)
+----------------------------------
+
+11/29/2023, 10:24:39 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments
+METHOD: GET
+------------------------------
+11/29/2023, 10:27:48 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?content=1
+METHOD: GET
+------------------------------
+
+11/29/2023, 10:28:51 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?content=1
+METHOD: GET
+------------------------------
+
+11/29/2023, 10:29:00 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?content=1
+METHOD: GET
+------------------------------
+11/29/2023, 10:29:20 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?content=1&author=1
+METHOD: GET
+------------------------------
+11/29/2023, 10:29:56 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?content=1&author=gamer
+METHOD: GET
+------------------------------
+11/29/2023, 10:30:00 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?content=1&author=gamer123
+METHOD: GET
+------------------------------
+11/29/2023, 10:30:06 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?content=1&author=Gamer
+METHOD: GET
+------------------------------
+
+
+
+11/29/2023, 10:31:01 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?content=1&author=Gamer
+METHOD: GET
+------------------------------
+11/29/2023, 10:31:10 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?author=Gamer
+METHOD: GET
+------------------------------
+
+11/29/2023, 10:32:07 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?minPuntuation=3
+METHOD: GET
+------------------------------
+11/29/2023, 10:32:32 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?maxPuntuation=3
+METHOD: GET
+------------------------------
+11/29/2023, 10:33:23 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?minDate=2020
+METHOD: GET
+------------------------------
+11/29/2023, 10:33:51 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?maxDate=2020
+METHOD: GET
+------------------------------
+11/29/2023, 10:36:51 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?maxDate=2020
+METHOD: GET
+------------------------------
+
+11/29/2023, 10:38:31 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?maxYear=2020
+METHOD: GET
+------------------------------
+11/29/2023, 10:38:31 PM | error | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?maxYear=2020
+METHOD: GET
+ERROR: ReferenceError: minYearNumber is not defined
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/controllers/comments.js:19:24
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/utils/errorWrapper.js:3:9
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:280:10)
+    at Function.handle (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:175:3)
+----------------------------------
+
+11/29/2023, 10:38:43 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?maxYear=2020
+METHOD: GET
+------------------------------
+
+11/29/2023, 10:39:03 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?maxYear=2020
+METHOD: GET
+------------------------------
+11/29/2023, 10:39:12 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?minYear=2020
+METHOD: GET
+------------------------------
+
+11/29/2023, 10:40:35 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 10:40:48 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 10:40:49 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 10:40:50 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 10:40:51 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 10:40:51 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 10:40:52 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 10:40:53 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 10:40:54 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 10:40:55 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 10:40:56 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 10:40:57 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 10:40:58 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 10:40:58 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 10:40:59 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+11/29/2023, 11:02:36 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: POST
+------------------------------
+11/29/2023, 11:04:46 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 11:05:34 PM | info | USER: prueba
+ROLES: User
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 11:05:34 PM | error | USER: prueba
+ROLES: User
+ENDPOINT: /users
+METHOD: GET
+ERROR: MongoServerError: E11000 duplicate key error collection: 65389cb457031162c076a5d2_proyecto.users index: usage.date_1 dup key: { usage.date: new Date(1701237600000) }
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/operations/update.js:70:33
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/operations/command.js:84:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+----------------------------------
+11/29/2023, 11:12:21 PM | info | USER: prueba
+ROLES: User
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 11:12:21 PM | error | USER: prueba
+ROLES: User
+ENDPOINT: /users
+METHOD: GET
+ERROR: MongoServerError: E11000 duplicate key error collection: 65389cb457031162c076a5d2_proyecto.users index: usage.date_1 dup key: { usage.date: new Date(1701237600000) }
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/operations/update.js:70:33
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/operations/command.js:84:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+----------------------------------
+
+11/29/2023, 11:14:48 PM | info | USER: prueba
+ROLES: User
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 11:14:49 PM | error | USER: prueba
+ROLES: User
+ENDPOINT: /users
+METHOD: GET
+ERROR: MongoServerError: E11000 duplicate key error collection: 65389cb457031162c076a5d2_proyecto.users index: usage.date_1 dup key: { usage.date: new Date(1701237600000) }
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/operations/update.js:70:33
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/operations/command.js:84:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+----------------------------------
+
+11/29/2023, 11:20:57 PM | info | USER: prueba
+ROLES: User
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 11:20:57 PM | error | USER: prueba
+ROLES: User
+ENDPOINT: /users
+METHOD: GET
+ERROR: MongoServerError: E11000 duplicate key error collection: 65389cb457031162c076a5d2_proyecto.users index: usage.date_1 dup key: { usage.date: new Date(1701237600000) }
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/operations/update.js:70:33
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/operations/command.js:84:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+----------------------------------
+
+
+
+
+
+11/29/2023, 11:22:31 PM | info | USER: prueba
+ROLES: User
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 11:22:31 PM | error | USER: prueba
+ROLES: User
+ENDPOINT: /users
+METHOD: GET
+ERROR: MongoServerError: Plan executor error during findAndModify :: caused by :: E11000 duplicate key error collection: proyecto.users index: usage.date_1 dup key: { usage.date: new Date(1701237600000) }
+    at Connection.onMessage (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/cmap/connection.js:202:26)
+    at MessageStream.<anonymous> (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/cmap/connection.js:61:60)
+    at MessageStream.emit (node:events:514:28)
+    at processIncomingData (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/cmap/message_stream.js:124:16)
+    at MessageStream._write (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/cmap/message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:447:12)
+    at _write (node:internal/streams/writable:389:10)
+    at Writable.write (node:internal/streams/writable:393:10)
+    at TLSSocket.ondata (node:internal/streams/readable:817:22)
+    at TLSSocket.emit (node:events:514:28)
+----------------------------------
+

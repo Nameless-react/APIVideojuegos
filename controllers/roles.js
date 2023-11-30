@@ -3,12 +3,20 @@ import { capitalize } from "../utils/utils.js";
 import config from "../config/config.js"
 import errorWrapper from "../utils/errorWrapper.js";
 import { CustomError } from "../utils/customError.js";
-
+import { filters } from "../utils/filterRol.js";
 
 
 export const getRoles = (roleModel) => errorWrapper(async (req, res) => {
-    const respond = await roleModel.find({}, {
+    const { name } = req.query;    
+    const fields = {
+        name: parseInt(name) === 1 ? 1 : name,
+    }
+    
+    const selectedFields = Object.fromEntries(Object.entries(fields).filter(field => field[1] === 1));
+
+    const respond = await roleModel.find(filters(Object.entries(fields).filter(([key, value]) => value !== 1 && value)), {
         _id: 0,
+        ...selectedFields
     });
     
 

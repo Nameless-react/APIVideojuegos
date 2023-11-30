@@ -1,6 +1,6 @@
 import { validateComment, validatePartialComment } from "../schemas/comment.js"
-// import { filters } from "../utils/filterComment.js"
-import { capitalize } from "../utils/utils.js";
+import { filters } from "../utils/filterComment.js"
+import { capitalize, isValidNumber } from "../utils/utils.js";
 import config from "../config/config.js"
 import errorWrapper from "../utils/errorWrapper.js";
 import { CustomError } from "../utils/customError.js";
@@ -8,17 +8,35 @@ import { CustomError } from "../utils/customError.js";
 
 
 export const getComments = (commentModel) => errorWrapper(async (req, res) => {
-    // const fields = {
-    //     name: parseInt(name) === 1,
-    //     number_employees: employeesNumber,
-    //     foundation,
-    //     web
-    // }
-    // const finalFields = Object.fromEntries(Object.entries(fields).filter(field => field[1]).map(field => [field[0], parseInt(field[1])]));
+    const { author, videogame, minPuntuation, maxPuntuation, minYear, maxYear, content } = req.query;
+    let minPuntuationNumber = parseInt(minPuntuation);
+    let maxPuntuationNumber = parseInt(maxPuntuation);
+    let minYearNumber = parseInt(minYear)
+    let maxYearNumber = parseInt(maxYear)
+
+    
+    if (!isValidNumber(minPuntuationNumber) || !isValidNumber(maxPuntuationNumber)) throw new CustomError(JSON.stringify({message: "Min or Max puntuation are not valid"}), 400, "failed");
+    if (!isValidNumber(minYearNumber) || !isValidNumber(maxYearNumber)) throw new CustomError(JSON.stringify({message: "Min or Max year are not valid"}), 400, "failed");
+
+    const fields = {
+        author: parseInt(author) === 1 ? 1 : author,
+        videogame: parseInt(videogame) === 1 ? 1 : videogame,
+        content: parseInt(content) === 1 ? 1 : content,
+        minPuntuation: minPuntuationNumber,
+        maxPuntuation: maxPuntuationNumber,
+        maxDate: maxYearNumber,
+        minDate: minYearNumber
+    }
 
 
-    const respond = await commentModel.find({}, {
+
+    
+    const selectedFields = Object.fromEntries(Object.entries(fields).filter(field => field[1] === 1));
+
+
+    const respond = await commentModel.find(filters(Object.entries(fields).filter(([key, value]) => value !== 1 && value)), {
         _id: 0,
+        ...selectedFields
     });
     
 
@@ -42,7 +60,7 @@ export const getComment = (commentModel) => errorWrapper(async (req, res) => {
 
 
 export const registerComment = (commentModel) => errorWrapper(async (req, res) => {
-    const result = validateDeveloper(req.body);
+    const result = validateComment(req.body);
     if (result.error) throw new CustomError(result.error.message, 400);
     
     

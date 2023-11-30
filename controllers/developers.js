@@ -8,7 +8,7 @@ import { CustomError } from "../utils/customError.js";
 
 
 export const getDevelopers = (developerModel) => errorWrapper(async (req, res) => {
-    const { name, minEmployees, maxEmployees, employeesNumber, foundation, web, minYear, maxYear} = req.query;
+    const { name, minEmployees, maxEmployees, employeesNumber, foundation, web, minYear, maxYear } = req.query;
     let minEmployeesNumber = parseInt(minEmployees);
     let maxEmployeesNumber = parseInt(maxEmployees);
     let minYearNumber = parseInt(minYear)

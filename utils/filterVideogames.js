@@ -9,10 +9,6 @@ const operations = {
         let regex = new RegExp(title, "i");
         return query.where("title").regex(regex);
     },
-    description: (query, description) => {
-        let regex = new RegExp(description, "i");
-        return query.where("description").regex(regex);
-    },
     developer: (query, developer) => {
         let regex = new RegExp(developer, "i");
         return query.where("developer").regex(regex);
