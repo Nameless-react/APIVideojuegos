@@ -68,7 +68,6 @@ export const registerUser = (userModel) => errorWrapper(async (req, res) => {
         ],
         usage: []
     })
-
     res.status(201).json({
         status: "success",
         message: `User registration was successful, and an API key has been generated for accessing the endpoints. Please keep this API key safe, as it cannot be recovered if lost. Api Key: ${apiKey}`

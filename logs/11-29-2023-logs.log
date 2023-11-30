@@ -1586,3 +1586,67 @@ ERROR: MongoServerError: Plan executor error during findAndModify :: caused by :
     at TLSSocket.emit (node:events:514:28)
 ----------------------------------
 
+11/29/2023, 11:29:42 PM | info | USER: prueba
+ROLES: User
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 11:29:54 PM | info | USER: prueba
+ROLES: User
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 11:29:57 PM | info | USER: prueba
+ROLES: User
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+11/29/2023, 11:33:27 PM | error | USER: prueba
+ROLES: User
+ENDPOINT: /users
+METHOD: POST
+ERROR: Error: {"message":"Don't have the right permissions to access the endpoint /users"}
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:18:141
+----------------------------------
+11/29/2023, 11:34:22 PM | error | USER: prueba
+ROLES: User
+ENDPOINT: /users/
+METHOD: POST
+ERROR: Error: {"message":"Don't have the right permissions to access the endpoint /users/"}
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:16:138
+----------------------------------
+
+11/29/2023, 11:35:58 PM | error | USER: unknown
+ROLES: 
+ENDPOINT: /users/
+METHOD: POST
+ERROR: TypeError: Cannot read properties of undefined (reading 'name')
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/userInfo.js:6:42
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/utils/errorWrapper.js:3:9
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:328:13)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:280:10)
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:6:77
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/utils/errorWrapper.js:3:9
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+----------------------------------
+
+11/29/2023, 11:37:36 PM | info | USER: unknown
+ROLES: 
+ENDPOINT: /users/
+METHOD: POST
+------------------------------
+11/29/2023, 11:37:36 PM | error | USER: unknown
+ROLES: 
+ENDPOINT: /users/
+METHOD: POST
+ERROR: Error: {"message":"User not found for update"}
+    at userSchema.statics.updateUsageCount (file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/db/user.js:46:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/userInfo.js:12:5
+----------------------------------
+
+
+
