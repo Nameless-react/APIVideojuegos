@@ -14,7 +14,7 @@ ERROR: ${error.stack}
     if (error.isOperational) { 
         return res.status(status).json({
             status: error.status ?? "failed",
-            message: JSON.parse(error.message),
+            message: error.isZodError ? JSON.parse(error.message) : error.message,
             data: []
         })
     }

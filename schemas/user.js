@@ -20,5 +20,14 @@ const userValidations = z.object({
 })
 
 
+const userRoleValidation = z.object({
+    role: z.string({
+        invalid_type_error: "The role must be a string",
+        required_error: "The field role is required"
+    })
+})
+
+
+export const validateUserRole = (object) => userRoleValidation.safeParse(object);
 export const validateUser = (object) => userValidations.safeParse(object);
 export const validatePartialUser = (object) => userValidations.partial().safeParse(object);

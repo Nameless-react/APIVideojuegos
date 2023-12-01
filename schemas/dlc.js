@@ -1,7 +1,10 @@
 import z from "zod";
 
 const dlcValidations = z.object({
-    name: z.string(),
+    name: z.string({
+        invalid_type_error: "The name must be a string",
+        required_error: "The field name is required"
+    }),
     description: z.string({
         invalid_type_error: "The description must be a string",
         required_error: "The field description is required"

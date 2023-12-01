@@ -1,4 +1,4 @@
-import { validateDlc, validatePartialDlc } from "../schemas/dlc.js"
+import { validateRole, validatePartialRole } from "../schemas/role.js"
 import { capitalize } from "../utils/utils.js";
 import config from "../config/config.js"
 import errorWrapper from "../utils/errorWrapper.js";
@@ -14,7 +14,7 @@ export const getRoles = (roleModel) => errorWrapper(async (req, res) => {
     
     const selectedFields = Object.fromEntries(Object.entries(fields).filter(field => field[1] === 1));
 
-    const respond = await roleModel.find(filters(Object.entries(fields).filter(([key, value]) => value !== 1 && value)), {
+    const respond = await roleModel.find(filters(Object.entries(fields).filter(([key, value]) => value !== 1 && value), roleModel), {
         _id: 0,
         ...selectedFields
     });
@@ -30,7 +30,7 @@ export const getRole = (roleModel) => errorWrapper(async (req, res) => {
     const { id } = req.params;
     let regexName = new RegExp(capitalize(id), "i");        
     const respond = id.length < 24 ? await roleModel.findOne({name: {$regex: regexName}}) : await roleModel.findById(id, {__v: 0}); 
-    if (!respond) throw new CustomError(JSON.stringify({message: "The document was not found"}), 404, "not found");
+    if (!respond) throw new CustomError("The document was not found", 404, "not found");
 
     res.status(200).json({
         status: "success",
@@ -40,15 +40,15 @@ export const getRole = (roleModel) => errorWrapper(async (req, res) => {
 
 
 export const registerRole = (roleModel) => errorWrapper(async (req, res) => {
-    const result = validateDlc(req.body);
-    if (result.error) throw new CustomError(result.error.message, 400);
+    const result = validateRole(req.body);
+    if (result.error) throw new CustomError(result.error.message, 400, "failed", true);
     
     
     const alreadyExist = await roleModel.findOne({name: capitalize(result.data.name)});
-    if (alreadyExist) throw new CustomError(JSON.stringify({message: `Resource already exist in the database, follow the next link to find the data: http://localhost:${config.port}/dlcs/${alreadyExist._id}`}), 409, "redirect");
+    if (alreadyExist) throw new CustomError(`Resource already exist in the database, follow the next link to find the data: http://localhost:${config.port}/dlcs/${alreadyExist._id}`, 409, "redirect");
       
 
-    const newDocument = await dlcModel.create({...result.data})
+    const newDocument = await roleModel.create({...result.data})
 
     res.status(201).json({
         status: "success",
@@ -59,29 +59,31 @@ export const registerRole = (roleModel) => errorWrapper(async (req, res) => {
 export const deleteRole = (roleModel) => errorWrapper(async (req, res) => {
     const { id } = req.params;
     const alreadyExist = await roleModel.findById(id); 
-    if (!alreadyExist) throw new CustomError(JSON.stringify({message: "Cannot delete the requested document"}), 404, "not found");
+    if (!alreadyExist) throw new CustomError("Cannot delete the requested document", 404, "not found");
     
     
     await roleModel.deleteOne(alreadyExist._id);
-    return res.status(204).json({
+    res.status(200).json({
         status: "success",
         message: "The document was deleted succesfully"
     })
 })
 
-export const updateRole = (roleModel) => errorWrapper(async (req, res, next) => {
+export const updateRole = (roleModel) => errorWrapper(async (req, res) => {
     const { id } = req.params;
-    const result = validatePartialDlc(req.body);
+    const result = validatePartialRole(req.body);
 
-    if (result.error) throw new CustomError(result.error.message, 400);
+    if (result.error) throw new CustomError(result.error.message, 400, "failed", true);
     
     const alreadyExist = await roleModel.findById(id); 
-    if (!alreadyExist) throw new CustomError(JSON.stringify({message: "Not Found"}), 404, "not found")
+    if (!alreadyExist) throw new CustomError("Not Found", 404, "not found")
     
     
-    const dlcUpdated = await roleModel.updateOne({_id: alreadyExist._id}, {...result.data});
+    const roleUpdated = await roleModel.findOneAndUpdate({_id: alreadyExist._id}, {...result.data}, {
+        new: true
+    });
     res.status(200).json({
         staus: "success",
-        data: dlcUpdated
+        data: roleUpdated
     })    
 })

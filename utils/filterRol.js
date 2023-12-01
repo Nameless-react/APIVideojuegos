@@ -1,5 +1,3 @@
-import rolModel from "../db/team.js";
-
 const operations = {
     name: (query, name) => {
         let regex = new RegExp(name, "i");
@@ -7,11 +5,11 @@ const operations = {
     }
 }
 
-export function filters(args) {
-    if (args.length === 0) return {};
+export function filters(options, rolModel) {
+    if (options.length === 0) return {};
     let query = rolModel.find();
     let modifications = 0;
-    for (const [func, values] of args) {
+    for (const [func, values] of options) {
         if (!operations[func]) continue;
         modifications++;
         query = operations[func](query, values)

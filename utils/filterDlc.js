@@ -1,5 +1,3 @@
-import dlcModel from "../db/dlc.js";
-
 const operations = {
     minPrice: (query, min) => {
         return query.where("price").gte(min);
@@ -25,11 +23,11 @@ const operations = {
     }
 }
 
-export function filters(args) {
-    if (args.length === 0) return {};
+export function filters(options, dlcModel) {
+    if (options.length === 0) return {};
     let query = dlcModel.find();
     let modifications = 0;
-    for (const [func, values] of args) {
+    for (const [func, values] of options) {
         if (!operations[func]) continue;
         modifications++;
         query = operations[func](query, values)

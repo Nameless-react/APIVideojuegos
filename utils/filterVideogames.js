@@ -1,5 +1,3 @@
-import videogamesModel from "../db/videogame.js";
-
 const operations = {
 
     genre: (query, genre) => {
@@ -23,11 +21,11 @@ const operations = {
     }
 }
 
-export function filters(args) {
-    if (args.length === 0) return {};
-    let query = videogamesModel.find();
+export function filters(options, videogameModel) {
+    if (options.length === 0) return {};
+    let query = videogameModel.find();
     let modifications = 0;
-    for (const [func, values] of args) {
+    for (const [func, values] of options) {
         if (!operations[func]) continue;
         modifications++;
         query = operations[func](query, values)

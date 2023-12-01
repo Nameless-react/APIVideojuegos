@@ -15,8 +15,8 @@ export const getDevelopers = (developerModel) => errorWrapper(async (req, res) =
     let maxYearNumber = parseInt(maxYear)
 
     
-    if (!isValidNumber(minEmployeesNumber) || !isValidNumber(maxEmployeesNumber)) throw new CustomError(JSON.stringify({message: "Min or Max number of employees are not valid"}), 400, "failed");
-    if (!isValidNumber(minYearNumber) || !isValidNumber(maxYearNumber)) throw new CustomError(JSON.stringify({message: "Min or Max year are not valid"}), 400, "failed");
+    if (!isValidNumber(minEmployeesNumber) || !isValidNumber(maxEmployeesNumber)) throw new CustomError("Min or Max number of employees are not valid", 400, "failed");
+    if (!isValidNumber(minYearNumber) || !isValidNumber(maxYearNumber)) throw new CustomError("Min or Max year are not valid", 400, "failed");
 
     const fields = {
         name: parseInt(name) === 1 ? 1 : name,
@@ -36,7 +36,7 @@ export const getDevelopers = (developerModel) => errorWrapper(async (req, res) =
 
 
 
-    const respond = await developerModel.find(filters(Object.entries(fields).filter(([key, value]) => value !== 1 && value)), {
+    const respond = await developerModel.find(filters(Object.entries(fields).filter(([key, value]) => value !== 1 && value), developerModel), {
         _id: 0,
         ...selectedFields
     });
@@ -52,7 +52,7 @@ export const getDeveloper = (developerModel) => errorWrapper(async (req, res) =>
     const { id } = req.params;
     let regexName = new RegExp(capitalize(id), "i");        
     const respond = id.length < 24 ? await developerModel.findOne({name: {$regex: regexName}}) : await developerModel.findById(id, {__v: 0}); 
-    if (!respond) throw new CustomError(JSON.stringify({message: "The document was not found"}), 404, "not found");
+    if (!respond) throw new CustomError("The document was not found", 404, "not found");
 
     res.status(200).json({
         status: "success",
@@ -63,11 +63,11 @@ export const getDeveloper = (developerModel) => errorWrapper(async (req, res) =>
 
 export const registerDeveloper = (developerModel) => errorWrapper(async (req, res) => {
     const result = validateDeveloper(req.body);
-    if (result.error) throw new CustomError(result.error.message, 400);
+    if (result.error) throw new CustomError(result.error.message, 400, "failed", true);
     
     
     const alreadyExist = await developerModel.findOne({name: capitalize(result.data.name)});
-    if (alreadyExist) throw new CustomError(JSON.stringify({message: `Resource already exist in the database, follow the next link to find the data: http://localhost:${config.port}/developers/${alreadyExist._id}`}), 409, "redirect");
+    if (alreadyExist) throw new CustomError(`Resource already exist in the database, follow the next link to find the data: http://localhost:${config.port}/developers/${alreadyExist._id}`, 409, "redirect");
       
 
     const newDocument = await developerModel.create({...result.data})
@@ -81,27 +81,29 @@ export const registerDeveloper = (developerModel) => errorWrapper(async (req, re
 export const deleteDeveloper = (developerModel) => errorWrapper(async (req, res) => {
     const { id } = req.params;
     const alreadyExist = await developerModel.findById(id); 
-    if (!alreadyExist) throw new CustomError(JSON.stringify({message: "Cannot delete the requested document"}), 404, "not found");
+    if (!alreadyExist) throw new CustomError("Cannot delete the requested document", 404, "not found");
     
     
     await developerModel.deleteOne(alreadyExist._id);
-    return res.status(204).json({
+    res.status(200).json({
         status: "success",
         message: "The document was deleted succesfully"
     })
 })
 
-export const updateDeveloper = (developerModel) => errorWrapper(async (req, res, next) => {
+export const updateDeveloper = (developerModel) => errorWrapper(async (req, res) => {
     const { id } = req.params;
     const result = validatePartialDeveloper(req.body);
 
-    if (result.error) throw new CustomError(result.error.message, 400);
+    if (result.error) throw new CustomError(result.error.message, 400, "failed", true);
     
     const alreadyExist = await developerModel.findById(id); 
-    if (!alreadyExist) throw new CustomError(JSON.stringify({message: "Not Found"}), 404, "not found")
+    if (!alreadyExist) throw new CustomError("Not Found", 404, "not found")
     
     
-    const developerUpdated = await developerModel.updateOne({_id: alreadyExist._id}, {...result.data});
+    const developerUpdated = await developerModel.findOneAndUpdate({_id: alreadyExist._id}, {...result.data}, {
+        new: true
+    });
     res.status(200).json({
         staus: "success",
         data: developerUpdated

@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { getUser, getUsers, registerUser, deleteUser, updateUser, generateApiKey } from "../controllers/users.js"
+import { getUser, getUsers, registerUser, deleteUser, updateUser, generateApiKey, addRole, deleteRole } from "../controllers/users.js"
 
 
-function userRouters(userModel) {
+function userRouters(userModel, roleModel) {
     const router = Router();
     router.get("/", getUsers(userModel));
 
@@ -15,6 +15,10 @@ function userRouters(userModel) {
     router.patch("/:id", updateUser(userModel));
 
     router.get("/generateKey/:id", generateApiKey(userModel));
+
+    router.patch("/addRole/:id", addRole(userModel, roleModel));
+
+    router.patch("/deleteRole/:id", deleteRole(userModel));
     return router;
 }
 

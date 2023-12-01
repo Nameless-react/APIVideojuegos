@@ -1,5 +1,3 @@
-import teamModel from "../db/team.js";
-
 const operations = {
     achievements: (query, achieve) => {
         return query.where("achievements").in(achieve);
@@ -13,11 +11,11 @@ const operations = {
     }
 }
 
-export function filters(args) {
-    if (args.length === 0) return {};
+export function filters(options, teamModel) {
+    if (options.length === 0) return {};
     let query = teamModel.find();
     let modifications = 0;
-    for (const [func, values] of args) {
+    for (const [func, values] of options) {
         if (!operations[func]) continue;
         modifications++;
         query = operations[func](query, values)

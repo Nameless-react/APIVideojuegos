@@ -17,7 +17,7 @@ export default (userModel) => errorWrapper(async (req, res, next) => {
             
             if ((req.method === "PATCH" || req.method === "POST") && !user.roles.some(role => ["Admin", "Moderator"].includes(role))) throw new CustomError(JSON.stringify({message: `Don't have the right permissions to access the endpoint ${req.originalUrl}`}), 403, "Forbbiden")
             
-            if (req.method === "DELETE" && !user.roles.some(role => "Admin" === role)) throw new CustomError(JSON.stringify({message: `Don't have the right permissions to access the endpoint "${req.originalUrl}"`}), 403, "Forbbiden")
+            if (req.method === "DELETE" && !user.roles.some(role => "Admin" === role)) throw new CustomError(JSON.stringify({message: `Don't have the right permissions to access the endpoint ${req.originalUrl}`}), 403, "Forbbiden")
 
             return next();
         }

@@ -1,5 +1,3 @@
-import commentModel from "../db/videogame.js";
-
 const operations = {
 
     author: (query, title) => {
@@ -26,11 +24,11 @@ const operations = {
     },
 }
 
-export function filters(args) {
-    if (args.length === 0) return {};
+export function filters(options, commentModel) {
+    if (options.length === 0) return {};
     let query = commentModel.find();
     let modifications = 0;
-    for (const [func, values] of args) {
+    for (const [func, values] of options) {
         if (!operations[func]) continue;
         modifications++;
         query = operations[func](query, values)

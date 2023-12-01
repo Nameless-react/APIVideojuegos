@@ -56,6 +56,8 @@ process.on("beforeExit", signal => {
 const app = express();
 app.disable("x-powered-by");
 app.use(express.json());
+
+
 //* Can add the allowed domains to avoid the "*" in the headers of CORS
 app.use(cors());
 const connect = connection();
@@ -69,8 +71,9 @@ app.get("/", (req, res) => {
 app.use(auth(userModel));
 app.use(userInfo(userModel));
 
+
 app.use("/videogames", videogameRouter(videogameModel));
-app.use("/users", userRouter(userModel));
+app.use("/users", userRouter(userModel, roleModel));
 app.use("/comments", commentRouter(commentModel));
 app.use("/developers", developerRouter(developerModel));
 app.use("/teams", teamRouter(teamModel));
@@ -79,7 +82,7 @@ app.use("/roles", roleRouter(roleModel));
 
 
 app.all("*", (req, res, next) => {
-    next(new CustomError(JSON.stringify({message: `Can't find ${req.originalUrl} on the server`}), 404, "not found"));
+    next(new CustomError(`Can't find ${req.originalUrl} on the server`, 404, "not found"));
 })
 
 app.use(errorHandler);
@@ -90,6 +93,3 @@ app.use(errorHandler);
 app.listen(config.port, () => {
     console.log(`El servidor está corriendo en el puerto http://localhost:${config.port}`);   
 })
-
-
-//*Verificar el funcionamiento de los filtros en las colecciones de users, además de implementar la inyección de dependencias a los filtros

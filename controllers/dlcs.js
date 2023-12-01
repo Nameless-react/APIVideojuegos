@@ -13,8 +13,8 @@ export const getDlcs = (dlcModel) => errorWrapper(async (req, res) => {
     let minPriceNumber = parseInt(minPrice);
 
 
-    if (!isValidNumber(minReleaseDateNumber) || !isValidNumber(maxReleaseDateNumber)) throw new CustomError(JSON.stringify({message: "Min or Max year of the release of the videogame are not valid"}), 400, "failed");
-    if (!isValidNumber(minPriceNumber) || !isValidNumber(maxPriceNumber)) throw new CustomError(JSON.stringify({message: "Min or Max price are not valid"}), 400, "failed");
+    if (!isValidNumber(minReleaseDateNumber) || !isValidNumber(maxReleaseDateNumber)) throw new CustomError("Min or Max year of the relee of the videogame are not valid", 400, "failed");
+    if (!isValidNumber(minPriceNumber) || !isValidNumber(maxPriceNumber)) throw new CustomError("Min or Max price are not vadid", 400, "failed");
 
 
     const fields = {
@@ -34,7 +34,7 @@ export const getDlcs = (dlcModel) => errorWrapper(async (req, res) => {
     const selectedFields = Object.fromEntries(Object.entries(fields).filter(field => field[1] === 1));
 
 
-    const respond = await dlcModel.find(filters(Object.entries(fields).filter(([key, value]) => value !== 1 && value)), {
+    const respond = await dlcModel.find(filters(Object.entries(fields).filter(([key, value]) => value !== 1 && value), dlcModel), {
         _id: 0,
         ...selectedFields
     });
@@ -50,7 +50,7 @@ export const getDlc = (dlcModel) => errorWrapper(async (req, res) => {
     const { id } = req.params;
     let regexName = new RegExp(capitalize(id), "i");        
     const respond = id.length < 24 ? await dlcModel.findOne({name: {$regex: regexName}}) : await dlcModel.findById(id, {__v: 0}); 
-    if (!respond) throw new CustomError(JSON.stringify({message: "The document was not found"}), 404, "not found");
+    if (!respond) throw new CustomError("The document was not found", 404, "not found");
 
     res.status(200).json({
         status: "success",
@@ -61,11 +61,11 @@ export const getDlc = (dlcModel) => errorWrapper(async (req, res) => {
 
 export const registerDlc = (dlcModel) => errorWrapper(async (req, res) => {
     const result = validateDlc(req.body);
-    if (result.error) throw new CustomError(result.error.message, 400);
+    if (result.error) throw new CustomError(result.error.message, 400, "failed", true);
     
     
     const alreadyExist = await dlcModel.findOne({name: capitalize(result.data.name)});
-    if (alreadyExist) throw new CustomError(JSON.stringify({message: `Resource already exist in the database, follow the next link to find the data: http://localhost:${config.port}/dlcs/${alreadyExist._id}`}), 409, "redirect");
+    if (alreadyExist) throw new CustomError(`Resource already exist in t database, follow the next link to find the data: http://localhost:${config.port}/dlcs/${alreadyExist._id}`, 409, "redirect");
       
 
     const newDocument = await dlcModel.create({...result.data})
@@ -79,27 +79,29 @@ export const registerDlc = (dlcModel) => errorWrapper(async (req, res) => {
 export const deleteDlc = (dlcModel) => errorWrapper(async (req, res) => {
     const { id } = req.params;
     const alreadyExist = await dlcModel.findById(id); 
-    if (!alreadyExist) throw new CustomError(JSON.stringify({message: "Cannot delete the requested document"}), 404, "not found");
+    if (!alreadyExist) throw new CustomError("Cannot delete the requestedocument", 404, "not found");
     
     
     await dlcModel.deleteOne(alreadyExist._id);
-    return res.status(204).json({
+    res.status(200).json({
         status: "success",
         message: "The document was deleted succesfully"
     })
 })
 
-export const updateDlc = (dlcModel) => errorWrapper(async (req, res, next) => {
+export const updateDlc = (dlcModel) => errorWrapper(async (req, res) => {
     const { id } = req.params;
     const result = validatePartialDlc(req.body);
 
-    if (result.error) throw new CustomError(result.error.message, 400);
+    if (result.error) throw new CustomError(result.error.message, 400, "failed", true);
     
     const alreadyExist = await dlcModel.findById(id); 
-    if (!alreadyExist) throw new CustomError(JSON.stringify({message: "Not Found"}), 404, "not found")
+    if (!alreadyExist) throw new CustomError("Not Found", 404, "not fou")
     
     
-    const dlcUpdated = await dlcModel.updateOne({_id: alreadyExist._id}, {...result.data});
+    const dlcUpdated = await dlcModel.findOneAndUpdate({_id: alreadyExist._id}, {...result.data}, {
+        new: true
+    });
     res.status(200).json({
         staus: "success",
         data: dlcUpdated
