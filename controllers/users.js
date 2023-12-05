@@ -9,6 +9,8 @@ import { filters } from "../utils/filterUser.js"
 export const getUsers = (userModel) => errorWrapper(async (req, res) => {
     const { name, email, roles, usage } = req.query;
 
+    const hasParameters = name || email || roles || usage;
+
     const fields = {
         name: parseInt(name) === 1 ? 1 : name,
         email: parseInt(email) === 1 ? 1 : email,
@@ -20,15 +22,19 @@ export const getUsers = (userModel) => errorWrapper(async (req, res) => {
 
     const respond = await userModel.find(filters(Object.entries(fields).filter(([key, value]) => value !== 1 && value), userModel), {
         _id: 0,
-        apiKey: 0,
-        password: 0,
         ...selectedFields
     });
-    
+
+    const result = respond.map(user => ({
+        name: user.name,
+        email: user.email,
+        usage: user.usage,
+        roles: user.roles
+    }))
 
     res.status(200).json({
         status: "success",
-        data: respond
+        data: result
     });
 })
 

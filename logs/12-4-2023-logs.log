@@ -1,0 +1,327 @@
+12/4/2023, 8:28:58 PM | error | USER: unknown
+ROLES: 
+ENDPOINT: /users
+METHOD: PATCH
+ERROR: Error: {"message":"Not authorize to access the endpoint \"/users\""}
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:6:43
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/utils/errorWrapper.js:3:9
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:328:13)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:280:10)
+    at cors (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/cors/lib/index.js:188:7)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/cors/lib/index.js:224:17
+    at originCallback (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/cors/lib/index.js:214:15)
+----------------------------------
+
+
+
+12/4/2023, 8:30:24 PM | error | USER: unknown
+ROLES: 
+ENDPOINT: /users
+METHOD: PATCH
+ERROR: Error: Not authorize to access the endpoint "/users"
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:6:43
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/utils/errorWrapper.js:3:9
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:328:13)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:280:10)
+    at cors (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/cors/lib/index.js:188:7)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/cors/lib/index.js:224:17
+    at originCallback (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/cors/lib/index.js:214:15)
+----------------------------------
+
+12/4/2023, 8:30:40 PM | error | USER: unknown
+ROLES: 
+ENDPOINT: /users
+METHOD: PATCH
+ERROR: Error: Not authorize to access the endpoint /users
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:6:43
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/utils/errorWrapper.js:3:9
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:328:13)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:346:12)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:280:10)
+    at cors (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/cors/lib/index.js:188:7)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/cors/lib/index.js:224:17
+    at originCallback (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/cors/lib/index.js:214:15)
+----------------------------------
+12/4/2023, 8:30:49 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: PATCH
+------------------------------
+12/4/2023, 8:30:49 PM | error | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: PATCH
+ERROR: Error: Can't find /users on the server
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/index.js:85:10
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:144:13)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:140:7)
+----------------------------------
+12/4/2023, 8:32:18 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+12/4/2023, 8:34:04 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users?name=1
+METHOD: GET
+------------------------------
+12/4/2023, 8:34:05 PM | error | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users?name=1
+METHOD: GET
+ERROR: MongoServerError: Cannot do inclusion on field name in exclusion projection
+    at Connection.onMessage (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/cmap/connection.js:202:26)
+    at MessageStream.<anonymous> (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/cmap/connection.js:61:60)
+    at MessageStream.emit (node:events:514:28)
+    at processIncomingData (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/cmap/message_stream.js:124:16)
+    at MessageStream._write (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/cmap/message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:447:12)
+    at _write (node:internal/streams/writable:389:10)
+    at Writable.write (node:internal/streams/writable:393:10)
+    at TLSSocket.ondata (node:internal/streams/readable:817:22)
+    at TLSSocket.emit (node:events:514:28)
+----------------------------------
+12/4/2023, 8:35:01 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users?email=1
+METHOD: GET
+------------------------------
+12/4/2023, 8:35:01 PM | error | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users?email=1
+METHOD: GET
+ERROR: MongoServerError: Cannot do inclusion on field email in exclusion projection
+    at Connection.onMessage (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/cmap/connection.js:202:26)
+    at MessageStream.<anonymous> (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/cmap/connection.js:61:60)
+    at MessageStream.emit (node:events:514:28)
+    at processIncomingData (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/cmap/message_stream.js:124:16)
+    at MessageStream._write (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/cmap/message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:447:12)
+    at _write (node:internal/streams/writable:389:10)
+    at Writable.write (node:internal/streams/writable:393:10)
+    at TLSSocket.ondata (node:internal/streams/readable:817:22)
+    at TLSSocket.emit (node:events:514:28)
+----------------------------------
+12/4/2023, 8:35:19 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?author=1
+METHOD: GET
+------------------------------
+12/4/2023, 8:35:37 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?author=1&content=1
+METHOD: GET
+------------------------------
+12/4/2023, 8:35:59 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?minPuntuation=3
+METHOD: GET
+------------------------------
+12/4/2023, 8:36:20 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /comments?minPuntuation=3&maxPuntuation=4
+METHOD: GET
+------------------------------
+12/4/2023, 8:37:30 PM | info | USER: prueba
+ROLES: User
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+12/4/2023, 8:37:58 PM | error | USER: prueba
+ROLES: User
+ENDPOINT: /users
+METHOD: DELETE
+ERROR: Error: Don't have the right permissions to access the endpoint /users
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:20:94
+----------------------------------
+12/4/2023, 8:38:12 PM | error | USER: prueba
+ROLES: User
+ENDPOINT: /users/
+METHOD: GET
+ERROR: Error: Don't have the right permissions to access the endpoint /users/
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:16:138
+----------------------------------
+12/4/2023, 8:38:16 PM | info | USER: prueba
+ROLES: User
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+12/4/2023, 8:38:19 PM | error | USER: prueba
+ROLES: User
+ENDPOINT: /users/
+METHOD: GET
+ERROR: Error: Don't have the right permissions to access the endpoint /users/
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:16:138
+----------------------------------
+
+12/4/2023, 8:41:34 PM | error | USER: prueba
+ROLES: User
+ENDPOINT: /users
+METHOD: GET
+ERROR: Error: Don't have the right permissions to access the endpoint /users
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/middlewares/auth.js:16:146
+----------------------------------
+
+12/4/2023, 11:10:30 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+12/4/2023, 11:10:38 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users?name=1
+METHOD: GET
+------------------------------
+12/4/2023, 11:10:38 PM | error | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users?name=1
+METHOD: GET
+ERROR: MongoServerError: Cannot do inclusion on field name in exclusion projection
+    at Connection.onMessage (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/cmap/connection.js:202:26)
+    at MessageStream.<anonymous> (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/cmap/connection.js:61:60)
+    at MessageStream.emit (node:events:514:28)
+    at processIncomingData (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/cmap/message_stream.js:124:16)
+    at MessageStream._write (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/cmap/message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:447:12)
+    at _write (node:internal/streams/writable:389:10)
+    at Writable.write (node:internal/streams/writable:393:10)
+    at TLSSocket.ondata (node:internal/streams/readable:817:22)
+    at TLSSocket.emit (node:events:514:28)
+----------------------------------
+12/4/2023, 11:10:46 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users/?name=1
+METHOD: GET
+------------------------------
+12/4/2023, 11:10:46 PM | error | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users/?name=1
+METHOD: GET
+ERROR: MongoServerError: Cannot do inclusion on field name in exclusion projection
+    at Connection.onMessage (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/cmap/connection.js:202:26)
+    at MessageStream.<anonymous> (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/cmap/connection.js:61:60)
+    at MessageStream.emit (node:events:514:28)
+    at processIncomingData (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/cmap/message_stream.js:124:16)
+    at MessageStream._write (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/mongodb/lib/cmap/message_stream.js:33:9)
+    at writeOrBuffer (node:internal/streams/writable:447:12)
+    at _write (node:internal/streams/writable:389:10)
+    at Writable.write (node:internal/streams/writable:393:10)
+    at TLSSocket.ondata (node:internal/streams/readable:817:22)
+    at TLSSocket.emit (node:events:514:28)
+----------------------------------
+
+
+
+
+
+12/4/2023, 11:14:15 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users/?name=1
+METHOD: GET
+------------------------------
+12/4/2023, 11:14:36 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+
+12/4/2023, 11:14:53 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+
+
+
+12/4/2023, 11:16:48 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+
+
+
+12/4/2023, 11:22:26 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+12/4/2023, 11:22:32 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users?name=1
+METHOD: GET
+------------------------------
+12/4/2023, 11:22:40 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+
+12/4/2023, 11:42:14 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+
+12/4/2023, 11:43:55 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+
+12/4/2023, 11:44:20 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+12/4/2023, 11:44:20 PM | error | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+ERROR: TypeError: respond[0].map is not a function
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/controllers/users.js:25:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+----------------------------------
+
+12/4/2023, 11:44:38 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+
+
+
+
+
+
+
+
+
+
+
+12/4/2023, 11:51:26 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users
+METHOD: GET
+------------------------------
+
+
+
+
+
