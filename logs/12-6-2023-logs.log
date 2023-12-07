@@ -1,0 +1,71 @@
+12/6/2023, 11:29:47 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users/6568176c436c22d5bb2b7d47
+METHOD: PATCH
+------------------------------
+
+12/6/2023, 11:32:27 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users/6568176c436c22d5bb2b7d47
+METHOD: PATCH
+------------------------------
+
+
+
+12/6/2023, 11:36:04 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users/6568176c436c22d5bb2b7d47
+METHOD: PATCH
+------------------------------
+12/6/2023, 11:36:20 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users/6568176c436c22d5bb2b7d47
+METHOD: PATCH
+------------------------------
+12/6/2023, 11:36:21 PM | error | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users/6568176c436c22d5bb2b7d47
+METHOD: PATCH
+ERROR: Error: [
+  {
+    "code": "too_small",
+    "minimum": 8,
+    "type": "string",
+    "inclusive": true,
+    "exact": false,
+    "message": "Password must have more than 8 characters",
+    "path": [
+      "password"
+    ]
+  }
+]
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/controllers/users.js:100:29
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/utils/errorWrapper.js:3:9
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:365:14)
+    at param (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:376:14)
+    at Function.process_params (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/router/index.js:421:3)
+----------------------------------
+12/6/2023, 11:36:32 PM | info | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users/6568176c436c22d5bb2b7d47
+METHOD: PATCH
+------------------------------
+12/6/2023, 11:36:32 PM | error | USER: Joel García
+ROLES: User, Admin
+ENDPOINT: /users/6568176c436c22d5bb2b7d47
+METHOD: PATCH
+ERROR: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:406:5)
+    at ServerResponse.setHeader (node:_http_outgoing:652:11)
+    at ServerResponse.header (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/response.js:794:10)
+    at ServerResponse.send (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/response.js:174:12)
+    at ServerResponse.json (/Users/joel/Desktop/HTML Y CSS/APIVideojuegos/node_modules/express/lib/response.js:278:15)
+    at file:///Users/joel/Desktop/HTML%20Y%20CSS/APIVideojuegos/controllers/users.js:137:21
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+----------------------------------
+

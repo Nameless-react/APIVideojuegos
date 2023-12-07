@@ -102,10 +102,38 @@ export const updateUser = (userModel) => errorWrapper(async (req, res) => {
     const alreadyExist = await userModel.findById(id); 
     if (!alreadyExist) throw new CustomError("Not Found", 404, "not found")
     
-    
+    if (result.data.password) {
+        const hashPassword = await bcrypt.hash(result.data.password, 10);
+        const userUpdated = await userModel.findOneAndUpdate({_id: alreadyExist._id}, {...result.data, password: hashPassword}, {
+            new: true,
+            projection: {
+                name: 1,
+                email: 1,
+                roles: 1
+            }
+        });
+        return res.status(200).json({
+            staus: "success",
+            data: userUpdated,
+            message: "The password was updated correctly"
+        }) 
+    }
+
+
+
     const userUpdated = await userModel.findOneAndUpdate({_id: alreadyExist._id}, {...result.data}, {
-        new: true
+        new: true,
+        projection: {
+            name: 1,
+            email: 1,
+            roles: 1
+        }
     });
+
+
+    
+
+    
     res.status(200).json({
         staus: "success",
         data: userUpdated
